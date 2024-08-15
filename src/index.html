@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TwoDeeTwistees</title>
+  <author>JazzerThighs</author>
+  <script type="module" src="/main.js" defer></script>
+</head>
+
+<body>
+  <div id="selectionscontainer">
+    <select id="puzzleselector" onchange="populateHtmlDropdown()">
+      <option value="rubiks_cube_3x3x3">3×3×3 Rubik's Cube</option>
+      <option value="rubiks_junior_2x2x2">2×2×2 Rubik's Junior</option>
+      <option value="melindas_physical_2x2x2x2">2×2×2×2 Melinda's Physical Hypercube</option>
+    </select>
+    <select id="versionselector" onchange="updateBodyContent()" style="margin-left: 10px;">
+      <!-- Options will be populated dynamically -->
+    </select>
+  </div>
+
+  <div id="headercontainer">
+    <div style="display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: 600px;">
+      <h2 id="titlecontainer" style="margin: 3px 10px 3px 0; font-size: 24px; flex-grow: 1;"></h2>
+    </div>
+    <p id="subtitlecontainer" style="margin-top: 5px;"></p>
+  </div>
+
+  <div id="stopwatchcontainer">
+    <div style="flex-shrink: 0;">
+      <button id="scramble" style="padding: 10px 15px; margin-right: 5px;">Scramble</button>
+      <button id="reset" style="padding: 10px 15px;">Reset</button>
+    </div>
+    <div id="solvetime">(Not Solved Yet... )</div>
+    <h2 id="stopwatch" style="margin-top: 20px; font-size: 28px; letter-spacing: 1px;">
+      00:00:00:000
+    </h2>
+  </div>
+
+  <div id="puzzlecontainer">
+
+  </div>
+</body>
+
+</html>
