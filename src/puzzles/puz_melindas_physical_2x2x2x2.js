@@ -3,115 +3,17 @@ export const melindas_physical_2x2x2x2 = {
     subtitletext: "Code repurposed from <a href=\"https://2x2x2x2scrambler.github.io/\">Grant's Physical 2^4 Scrambler</a>",
     controlstext: "Controls: <i>(Canonical Moves for Melinda's Physical 2^4)</i><br />Lx &nbsp;&nbsp; -> \"KeyR\"&nbsp;&nbsp;&nbsp;&nbsp; Rx&nbsp;&nbsp;&nbsp; -> \"KeyU\" <br />Lx' &nbsp; -> \"KeyF\"&nbsp;&nbsp;&nbsp;&nbsp; Rx'&nbsp;&nbsp; -> \"KeyJ\" <br />Ly &nbsp;&nbsp; -> \"KeyE\"&nbsp;&nbsp;&nbsp;&nbsp; Ry&nbsp;&nbsp;&nbsp; -> \"KeyK\" <br />Ly' &nbsp; -> \"KeyD\"&nbsp;&nbsp;&nbsp;&nbsp; Ry'&nbsp;&nbsp; -> \"KeyI\" <br />Lz &nbsp;&nbsp; -> \"KeyW\"&nbsp;&nbsp;&nbsp;&nbsp; Rz&nbsp;&nbsp;&nbsp; -> \"KeyL\" <br />Lz' &nbsp; -> \"KeyS\"&nbsp;&nbsp;&nbsp;&nbsp; Rz'&nbsp;&nbsp; -> \"KeyO\" <br />Uy2 &nbsp; -> \"KeyQ\"&nbsp;&nbsp;&nbsp;&nbsp; Dy2&nbsp;&nbsp; -> \"KeyP\" <br />ix &nbsp;&nbsp; -> \"KeyT\"&nbsp;&nbsp;&nbsp;&nbsp; ix&nbsp;&nbsp;&nbsp; -> \"KeyY\" <br />ix'&nbsp;&nbsp; -> \"KeyG\"&nbsp;&nbsp;&nbsp;&nbsp; ix'&nbsp;&nbsp;&nbsp;-> \"KeyH\" <br />gyro &nbsp;-> \"KeyA\"&nbsp;&nbsp;&nbsp;&nbsp; gyro'&nbsp;-> \"Semicolon\"</br>",
     svgversions: [
-        `<svg id="cube" viewbox="-5 -5 375 135" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" style="display: block; max-width: 95%; height: auto; padding: 1rem">\n
-<polygon id="tri1" points="25.000,50.000 50.000,50.000 25.000,25.000" />\n
-<polygon id="tri2" points="25.000,50.000 0.000,50.000 25.000,75.000" />\n
-<polygon id="tri3" points="25.000,50.000 50.000,50.000 25.000,75.000" />\n
-<polygon id="tri0" points="25.000,50.000 0.000,50.000 25.000,25.000" />\n
-<polygon id="tri5" points="50.000,25.000 25.000,25.000 50.000,50.000" />\n
-<polygon id="tri4" points="0.000,25.000 25.000,25.000 0.000,50.000" />\n
-<polygon id="tri6" points="50.000,75.000 25.000,75.000 50.000,50.000" />\n
-<polygon id="tri8" points="75.000,50.000 50.000,50.000 75.000,25.000" />\n
-<polygon id="tri7" points="0.000,75.000 25.000,75.000 0.000,50.000" />\n
-<polygon id="tri9" points="75.000,50.000 100.000,50.000 75.000,25.000" />\n
-<polygon id="tri11" points="75.000,50.000 100.000,50.000 75.000,75.000" />\n
-<polygon id="tri10" points="75.000,50.000 50.000,50.000 75.000,75.000" />\n
-<polygon id="tri12" points="50.000,25.000 75.000,25.000 50.000,50.000" />\n
-<polygon id="tri15" points="50.000,75.000 75.000,75.000 50.000,50.000" />\n
-<polygon id="tri13" points="100.000,25.000 75.000,25.000 100.000,50.000" />\n
-<polygon id="tri17" points="75.000,100.000 100.000,100.000 75.000,75.000" />\n
-<polygon id="tri14" points="100.000,75.000 75.000,75.000 100.000,50.000" />\n
-<polygon id="tri18" points="75.000,100.000 50.000,100.000 75.000,125.000" />\n
-<polygon id="tri19" points="75.000,100.000 100.000,100.000 75.000,125.000" />\n
-<polygon id="tri16" points="75.000,100.000 50.000,100.000 75.000,75.000" />\n
-<polygon id="tri21" points="100.000,75.000 75.000,75.000 100.000,100.000" />\n
-<polygon id="tri22" points="100.000,125.000 75.000,125.000 100.000,100.000" />\n
-<polygon id="tri23" points="50.000,125.000 75.000,125.000 50.000,100.000" />\n
-<polygon id="tri24" points="150.000,25.000 125.000,25.000 150.000,0.000" />\n
-<polygon id="tri20" points="50.000,75.000 75.000,75.000 50.000,100.000" />\n
-<polygon id="tri25" points="150.000,25.000 175.000,25.000 150.000,0.000" />\n
-<polygon id="tri26" points="150.000,25.000 125.000,25.000 150.000,50.000" />\n
-<polygon id="tri29" points="175.000,0.000 150.000,0.000 175.000,25.000" />\n
-<polygon id="tri30" points="175.000,50.000 150.000,50.000 175.000,25.000" />\n
-<polygon id="tri31" points="125.000,50.000 150.000,50.000 125.000,25.000" />\n
-<polygon id="tri27" points="150.000,25.000 175.000,25.000 150.000,50.000" />\n
-<polygon id="tri35" points="87.500,12.500 112.500,12.500 75.000,25.000" />\n
-<polygon id="tri28" points="125.000,0.000 150.000,0.000 125.000,25.000" />\n
-<polygon id="tri33" points="87.500,12.500 112.500,12.500 100.000,0.000" />\n
-<polygon id="tri32" points="87.500,12.500 62.500,12.500 100.000,0.000" />\n
-<polygon id="tri37" points="125.000,0.000 100.000,0.000 112.500,12.500" />\n
-<polygon id="tri36" points="75.000,0.000 100.000,0.000 62.500,12.500" />\n
-<polygon id="tri34" points="87.500,12.500 62.500,12.500 75.000,25.000" />\n
-<polygon id="tri39" points="50.000,25.000 75.000,25.000 62.500,12.500" />\n
-<polygon id="tri41" points="112.500,37.500 125.000,25.000 112.500,12.500" />\n
-<polygon id="tri40" points="112.500,37.500 100.000,50.000 112.500,12.500" />\n
-<polygon id="tri43" points="112.500,37.500 125.000,25.000 112.500,62.500" />\n
-<polygon id="tri38" points="100.000,25.000 75.000,25.000 112.500,12.500" />\n
-<polygon id="tri42" points="112.500,37.500 100.000,50.000 112.500,62.500" />\n
-<polygon id="tri44" points="100.000,25.000 112.500,12.500 100.000,50.000" />\n
-<polygon id="tri46" points="125.000,50.000 112.500,62.500 125.000,25.000" />\n
-<polygon id="tri45" points="125.000,0.000 112.500,12.500 125.000,25.000" />\n
-<polygon id="tri47" points="100.000,75.000 112.500,62.500 100.000,50.000" />\n
-<polygon id="tri50" points="200.000,25.000 175.000,25.000 200.000,50.000" />\n
-<polygon id="tri49" points="200.000,25.000 225.000,25.000 200.000,0.000" />\n
-<polygon id="tri51" points="200.000,25.000 225.000,25.000 200.000,50.000" />\n
-<polygon id="tri52" points="175.000,0.000 200.000,0.000 175.000,25.000" />\n
-<polygon id="tri48" points="200.000,25.000 175.000,25.000 200.000,0.000" />\n
-<polygon id="tri57" points="275.000,50.000 300.000,50.000 275.000,25.000" />\n
-<polygon id="tri55" points="175.000,50.000 200.000,50.000 175.000,25.000" />\n
-<polygon id="tri56" points="275.000,50.000 250.000,50.000 275.000,25.000" />\n
-<polygon id="tri54" points="225.000,50.000 200.000,50.000 225.000,25.000" />\n
-<polygon id="tri58" points="275.000,50.000 250.000,50.000 275.000,75.000" />\n
-<polygon id="tri60" points="250.000,25.000 275.000,25.000 250.000,50.000" />\n
-<polygon id="tri59" points="275.000,50.000 300.000,50.000 275.000,75.000" />\n
-<polygon id="tri62" points="300.000,75.000 275.000,75.000 300.000,50.000" />\n
-<polygon id="tri63" points="250.000,75.000 275.000,75.000 250.000,50.000" />\n
-<polygon id="tri64" points="275.000,100.000 250.000,100.000 275.000,75.000" />\n
-<polygon id="tri53" points="225.000,0.000 200.000,0.000 225.000,25.000" />\n
-<polygon id="tri66" points="275.000,100.000 250.000,100.000 275.000,125.000" />\n
-<polygon id="tri65" points="275.000,100.000 300.000,100.000 275.000,75.000" />\n
-<polygon id="tri67" points="275.000,100.000 300.000,100.000 275.000,125.000" />\n
-<polygon id="tri68" points="250.000,75.000 275.000,75.000 250.000,100.000" />\n
-<polygon id="tri70" points="300.000,125.000 275.000,125.000 300.000,100.000" />\n
-<polygon id="tri61" points="300.000,25.000 275.000,25.000 300.000,50.000" />\n
-<polygon id="tri69" points="300.000,75.000 275.000,75.000 300.000,100.000" />\n
-<polygon id="tri71" points="250.000,125.000 275.000,125.000 250.000,100.000" />\n
-<polygon id="tri74" points="325.000,50.000 300.000,50.000 325.000,75.000" />\n
-<polygon id="tri73" points="325.000,50.000 350.000,50.000 325.000,25.000" />\n
-<polygon id="tri72" points="325.000,50.000 300.000,50.000 325.000,25.000" />\n
-<polygon id="tri76" points="300.000,25.000 325.000,25.000 300.000,50.000" />\n
-<polygon id="tri75" points="325.000,50.000 350.000,50.000 325.000,75.000" />\n
-<polygon id="tri77" points="350.000,25.000 325.000,25.000 350.000,50.000" />\n
-<polygon id="tri80" points="237.500,37.500 225.000,25.000 237.500,12.500" />\n
-<polygon id="tri79" points="300.000,75.000 325.000,75.000 300.000,50.000" />\n
-<polygon id="tri81" points="237.500,37.500 250.000,50.000 237.500,12.500" />\n
-<polygon id="tri83" points="237.500,37.500 250.000,50.000 237.500,62.500" />\n
-<polygon id="tri82" points="237.500,37.500 225.000,25.000 237.500,62.500" />\n
-<polygon id="tri84" points="225.000,0.000 237.500,12.500 225.000,25.000" />\n
-<polygon id="tri78" points="350.000,75.000 325.000,75.000 350.000,50.000" />\n
-<polygon id="tri87" points="225.000,50.000 237.500,62.500 225.000,25.000" />\n
-<polygon id="tri85" points="250.000,25.000 237.500,12.500 250.000,50.000" />\n
-<polygon id="tri90" points="262.500,12.500 237.500,12.500 275.000,25.000" />\n
-<polygon id="tri88" points="262.500,12.500 237.500,12.500 250.000,0.000" />\n
-<polygon id="tri86" points="250.000,75.000 237.500,62.500 250.000,50.000" />\n
-<polygon id="tri91" points="262.500,12.500 287.500,12.500 275.000,25.000" />\n
-<polygon id="tri93" points="275.000,0.000 250.000,0.000 287.500,12.500" />\n
-<polygon id="tri89" points="262.500,12.500 287.500,12.500 250.000,0.000" />\n
-<polygon id="tri95" points="250.000,25.000 275.000,25.000 237.500,12.500" />\n
-<polygon id="tri94" points="300.000,25.000 275.000,25.000 287.500,12.500" />\n
-<polygon id="tri92" points="225.000,0.000 250.000,0.000 237.500,12.500" />\n
-</svg>`,
+        "<svg id=\"cube\" viewbox=\"-5 -5 375 135\" width=\"100%\" height=\"auto\" preserveAspectRatio=\"xMidYMid meet\" style=\"display: block; max-width: 95%; height: auto; padding: 1rem\"><polygon id=\"tri1\" points=\"25.000,50.000 50.000,50.000 25.000,25.000\" /><polygon id=\"tri2\" points=\"25.000,50.000 0.000,50.000 25.000,75.000\" /><polygon id=\"tri3\" points=\"25.000,50.000 50.000,50.000 25.000,75.000\" /><polygon id=\"tri0\" points=\"25.000,50.000 0.000,50.000 25.000,25.000\" /><polygon id=\"tri5\" points=\"50.000,25.000 25.000,25.000 50.000,50.000\" /><polygon id=\"tri4\" points=\"0.000,25.000 25.000,25.000 0.000,50.000\" /><polygon id=\"tri6\" points=\"50.000,75.000 25.000,75.000 50.000,50.000\" /><polygon id=\"tri8\" points=\"75.000,50.000 50.000,50.000 75.000,25.000\" /><polygon id=\"tri7\" points=\"0.000,75.000 25.000,75.000 0.000,50.000\" /><polygon id=\"tri9\" points=\"75.000,50.000 100.000,50.000 75.000,25.000\" /><polygon id=\"tri11\" points=\"75.000,50.000 100.000,50.000 75.000,75.000\" /><polygon id=\"tri10\" points=\"75.000,50.000 50.000,50.000 75.000,75.000\" /><polygon id=\"tri12\" points=\"50.000,25.000 75.000,25.000 50.000,50.000\" /><polygon id=\"tri15\" points=\"50.000,75.000 75.000,75.000 50.000,50.000\" /><polygon id=\"tri13\" points=\"100.000,25.000 75.000,25.000 100.000,50.000\" /><polygon id=\"tri17\" points=\"75.000,100.000 100.000,100.000 75.000,75.000\" /><polygon id=\"tri14\" points=\"100.000,75.000 75.000,75.000 100.000,50.000\" /><polygon id=\"tri18\" points=\"75.000,100.000 50.000,100.000 75.000,125.000\" /><polygon id=\"tri19\" points=\"75.000,100.000 100.000,100.000 75.000,125.000\" /><polygon id=\"tri16\" points=\"75.000,100.000 50.000,100.000 75.000,75.000\" /><polygon id=\"tri21\" points=\"100.000,75.000 75.000,75.000 100.000,100.000\" /><polygon id=\"tri22\" points=\"100.000,125.000 75.000,125.000 100.000,100.000\" /><polygon id=\"tri23\" points=\"50.000,125.000 75.000,125.000 50.000,100.000\" /><polygon id=\"tri24\" points=\"150.000,25.000 125.000,25.000 150.000,0.000\" /><polygon id=\"tri20\" points=\"50.000,75.000 75.000,75.000 50.000,100.000\" /><polygon id=\"tri25\" points=\"150.000,25.000 175.000,25.000 150.000,0.000\" /><polygon id=\"tri26\" points=\"150.000,25.000 125.000,25.000 150.000,50.000\" /><polygon id=\"tri29\" points=\"175.000,0.000 150.000,0.000 175.000,25.000\" /><polygon id=\"tri30\" points=\"175.000,50.000 150.000,50.000 175.000,25.000\" /><polygon id=\"tri31\" points=\"125.000,50.000 150.000,50.000 125.000,25.000\" /><polygon id=\"tri27\" points=\"150.000,25.000 175.000,25.000 150.000,50.000\" /><polygon id=\"tri35\" points=\"87.500,12.500 112.500,12.500 75.000,25.000\" /><polygon id=\"tri28\" points=\"125.000,0.000 150.000,0.000 125.000,25.000\" /><polygon id=\"tri33\" points=\"87.500,12.500 112.500,12.500 100.000,0.000\" /><polygon id=\"tri32\" points=\"87.500,12.500 62.500,12.500 100.000,0.000\" /><polygon id=\"tri37\" points=\"125.000,0.000 100.000,0.000 112.500,12.500\" /><polygon id=\"tri36\" points=\"75.000,0.000 100.000,0.000 62.500,12.500\" /><polygon id=\"tri34\" points=\"87.500,12.500 62.500,12.500 75.000,25.000\" /><polygon id=\"tri39\" points=\"50.000,25.000 75.000,25.000 62.500,12.500\" /><polygon id=\"tri41\" points=\"112.500,37.500 125.000,25.000 112.500,12.500\" /><polygon id=\"tri40\" points=\"112.500,37.500 100.000,50.000 112.500,12.500\" /><polygon id=\"tri43\" points=\"112.500,37.500 125.000,25.000 112.500,62.500\" /><polygon id=\"tri38\" points=\"100.000,25.000 75.000,25.000 112.500,12.500\" /><polygon id=\"tri42\" points=\"112.500,37.500 100.000,50.000 112.500,62.500\" /><polygon id=\"tri44\" points=\"100.000,25.000 112.500,12.500 100.000,50.000\" /><polygon id=\"tri46\" points=\"125.000,50.000 112.500,62.500 125.000,25.000\" /><polygon id=\"tri45\" points=\"125.000,0.000 112.500,12.500 125.000,25.000\" /><polygon id=\"tri47\" points=\"100.000,75.000 112.500,62.500 100.000,50.000\" /><polygon id=\"tri50\" points=\"200.000,25.000 175.000,25.000 200.000,50.000\" /><polygon id=\"tri49\" points=\"200.000,25.000 225.000,25.000 200.000,0.000\" /><polygon id=\"tri51\" points=\"200.000,25.000 225.000,25.000 200.000,50.000\" /><polygon id=\"tri52\" points=\"175.000,0.000 200.000,0.000 175.000,25.000\" /><polygon id=\"tri48\" points=\"200.000,25.000 175.000,25.000 200.000,0.000\" /><polygon id=\"tri57\" points=\"275.000,50.000 300.000,50.000 275.000,25.000\" /><polygon id=\"tri55\" points=\"175.000,50.000 200.000,50.000 175.000,25.000\" /><polygon id=\"tri56\" points=\"275.000,50.000 250.000,50.000 275.000,25.000\" /><polygon id=\"tri54\" points=\"225.000,50.000 200.000,50.000 225.000,25.000\" /><polygon id=\"tri58\" points=\"275.000,50.000 250.000,50.000 275.000,75.000\" /><polygon id=\"tri60\" points=\"250.000,25.000 275.000,25.000 250.000,50.000\" /><polygon id=\"tri59\" points=\"275.000,50.000 300.000,50.000 275.000,75.000\" /><polygon id=\"tri62\" points=\"300.000,75.000 275.000,75.000 300.000,50.000\" /><polygon id=\"tri63\" points=\"250.000,75.000 275.000,75.000 250.000,50.000\" /><polygon id=\"tri64\" points=\"275.000,100.000 250.000,100.000 275.000,75.000\" /><polygon id=\"tri53\" points=\"225.000,0.000 200.000,0.000 225.000,25.000\" /><polygon id=\"tri66\" points=\"275.000,100.000 250.000,100.000 275.000,125.000\" /><polygon id=\"tri65\" points=\"275.000,100.000 300.000,100.000 275.000,75.000\" /><polygon id=\"tri67\" points=\"275.000,100.000 300.000,100.000 275.000,125.000\" /><polygon id=\"tri68\" points=\"250.000,75.000 275.000,75.000 250.000,100.000\" /><polygon id=\"tri70\" points=\"300.000,125.000 275.000,125.000 300.000,100.000\" /><polygon id=\"tri61\" points=\"300.000,25.000 275.000,25.000 300.000,50.000\" /><polygon id=\"tri69\" points=\"300.000,75.000 275.000,75.000 300.000,100.000\" /><polygon id=\"tri71\" points=\"250.000,125.000 275.000,125.000 250.000,100.000\" /><polygon id=\"tri74\" points=\"325.000,50.000 300.000,50.000 325.000,75.000\" /><polygon id=\"tri73\" points=\"325.000,50.000 350.000,50.000 325.000,25.000\" /><polygon id=\"tri72\" points=\"325.000,50.000 300.000,50.000 325.000,25.000\" /><polygon id=\"tri76\" points=\"300.000,25.000 325.000,25.000 300.000,50.000\" /><polygon id=\"tri75\" points=\"325.000,50.000 350.000,50.000 325.000,75.000\" /><polygon id=\"tri77\" points=\"350.000,25.000 325.000,25.000 350.000,50.000\" /><polygon id=\"tri80\" points=\"237.500,37.500 225.000,25.000 237.500,12.500\" /><polygon id=\"tri79\" points=\"300.000,75.000 325.000,75.000 300.000,50.000\" /><polygon id=\"tri81\" points=\"237.500,37.500 250.000,50.000 237.500,12.500\" /><polygon id=\"tri83\" points=\"237.500,37.500 250.000,50.000 237.500,62.500\" /><polygon id=\"tri82\" points=\"237.500,37.500 225.000,25.000 237.500,62.500\" /><polygon id=\"tri84\" points=\"225.000,0.000 237.500,12.500 225.000,25.000\" /><polygon id=\"tri78\" points=\"350.000,75.000 325.000,75.000 350.000,50.000\" /><polygon id=\"tri87\" points=\"225.000,50.000 237.500,62.500 225.000,25.000\" /><polygon id=\"tri85\" points=\"250.000,25.000 237.500,12.500 250.000,50.000\" /><polygon id=\"tri90\" points=\"262.500,12.500 237.500,12.500 275.000,25.000\" /><polygon id=\"tri88\" points=\"262.500,12.500 237.500,12.500 250.000,0.000\" /><polygon id=\"tri86\" points=\"250.000,75.000 237.500,62.500 250.000,50.000\" /><polygon id=\"tri91\" points=\"262.500,12.500 287.500,12.500 275.000,25.000\" /><polygon id=\"tri93\" points=\"275.000,0.000 250.000,0.000 287.500,12.500\" /><polygon id=\"tri89\" points=\"262.500,12.500 287.500,12.500 250.000,0.000\" /><polygon id=\"tri95\" points=\"250.000,25.000 275.000,25.000 237.500,12.500\" /><polygon id=\"tri94\" points=\"300.000,25.000 275.000,25.000 287.500,12.500\" /><polygon id=\"tri92\" points=\"225.000,0.000 250.000,0.000 237.500,12.500\" /></svg>",
     ],
-
     linkedtris: [
-        [0, 1, 2, 3, 72, 73, 74, 75],
-        [8, 9, 10, 11, 56, 57, 58, 59],
-        [16, 17, 18, 19, 64, 65, 66, 67],
-        [24, 25, 26, 27, 48, 49, 50, 51],
-        [32, 33, 34, 35, 88, 89, 90, 91],
-        [40, 41, 42, 43, 80, 81, 82, 83],
-        [4, 5, 6, 7, 44, 45, 46, 47],
-        [52, 53, 54, 55, 76, 77, 78, 79]
+        ["tri0",  "tri1",  "tri2",  "tri3",  "tri72", "tri73", "tri74", "tri75"],
+        ["tri8",  "tri9",  "tri10", "tri11", "tri56", "tri57", "tri58", "tri59"],
+        ["tri16", "tri17", "tri18", "tri19", "tri64", "tri65", "tri66", "tri67"],
+        ["tri24", "tri25", "tri26", "tri27", "tri48", "tri49", "tri50", "tri51"],
+        ["tri32", "tri33", "tri34", "tri35", "tri88", "tri89", "tri90", "tri91"],
+        ["tri40", "tri41", "tri42", "tri43", "tri80", "tri81", "tri82", "tri83"],
+        ["tri4",  "tri5",  "tri6",  "tri7",  "tri44", "tri45", "tri46", "tri47"],
+        ["tri52", "tri53", "tri54", "tri55", "tri76", "tri77", "tri78", "tri79"]
     ],
     cubies: [
         [8, 1, 5, 12, 34, 39],
@@ -1251,7 +1153,7 @@ export const melindas_physical_2x2x2x2 = {
                 ],
             ];
         },
-        LRx(input) {
+        LRx: function (input) {
             /* Rotates the input state of the cube around the x-axis*/
             input = [
                 input[3],
@@ -1268,7 +1170,7 @@ export const melindas_physical_2x2x2x2 = {
             }
             return input;
         },
-        LRy(input) {
+        LRy: function (input) {
             /* Rotates the input state of the cube around the y-axis*/
             input = [
                 input[3],
@@ -1285,7 +1187,7 @@ export const melindas_physical_2x2x2x2 = {
             }
             return input;
         },
-        LRz(input) {
+        LRz: function (input) {
             /* Rotates the input state of the cube around the z-axis*/
             input = [
                 input[4],
@@ -1389,24 +1291,6 @@ export const melindas_physical_2x2x2x2 = {
     },
 
 };
-
-export const p = {
-    titletext: "",
-    subtitletext: "",
-    controlstext: "",
-    svgversions: [],
-    linkedtris: [],
-    cubies: [],
-    colors: [
-        "orange",
-        "red",
-        "linen",
-        "yellow",
-        "limegreen",
-        "dodgerblue"
-    ],
-    
-}
 
 /* 
 const {
