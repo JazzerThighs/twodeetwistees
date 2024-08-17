@@ -3,18 +3,18 @@ const { invoke } = window.__TAURI__.tauri;
 import melindas_physical_2x2x2x2 from "./puzzles/puz_melindas_physical_2x2x2x2";
 import rubiks_junior_2x2x2 from "./puzzles/puz_2x2x2";
 import rubiks_cube_3x3x3 from "./puzzles/puz_3x3x3";
-
 const puzzles = {
   rubiks_junior_2x2x2: rubiks_junior_2x2x2,
   rubiks_cube_3x3x3: rubiks_cube_3x3x3,
   melindas_physical_2x2x2x2: melindas_physical_2x2x2x2,
 };
+const puzzleSelector = document.getElementById("puzzleselector");
+const versionSelector = document.getElementById("versionselector");
+const svgcontainer = document.getElementById("puzzlecontainer");
 
 function updatePuzzleSelection() {
-  const puzzleSelection = document.getElementById("puzzleselector").value;
-  const versionSelector = document.getElementById("versionselector");
   versionSelector.innerHTML = '';
-  puzzles[puzzleSelection].svgversions.forEach((literal, index) => {
+  puzzles[puzzleSelector.value].svgversions.forEach((literal, index) => {
       const option = document.createElement('option');
       option.value = index;
       option.textContent = `Layout ${index + 1}`;
@@ -23,10 +23,7 @@ function updatePuzzleSelection() {
   updateVersionSelection();
 }
 function updateVersionSelection() {
-  const puzzleSelection = document.getElementById("puzzleselector").value;
-  const versionSelection = document.getElementById("versionselector").value;
-  const svgcontainer = document.getElementById("puzzlecontainer");
-  svgcontainer.innerHTML = puzzles[puzzleSelection].svgversions[versionSelection];
+  svgcontainer.innerHTML = puzzles[puzzleSelector.value].svgversions[versionSelector.value];
 }
 
 let stopwatchInterval;
@@ -80,11 +77,23 @@ function stopAndResetStopwatch() {
   isStopwatchRunning = false;
   successfulSolve = false;
 }
-function handleKeydown(event) {
-  if (event.repeat === true) { return; }
-  // to do
+function resetStrokes() {
+  let input = puzzles[puzzleSelector.value].linkedtris;
+  for (let i = 0; i < input.length; i++) {
+    for (let j = 0; j < input[i].length; j++) {
+      let tri = document.getElementById(input[i][j]);
+      tri.setAttribute("stroke-width", "1");
+    }
+  }
 }
-function checkSolved(input) {
+function reset() {
+  puzzles[puzzleSelector.value].reset();
+}
+function getFillAttributes() {
+  return puzzles[puzzleSelector.value].getFillAttributes();
+}
+function checkSolved() {
+  let input = puzzles[puzzleSelector.value].linkedtris;
   let stopwatchstring = generateStopwatchString();
   for (let i = 0; i < input.length; i++) {
     for (let j = 0; j < input[i].length - 1; j++) {
@@ -92,7 +101,7 @@ function checkSolved(input) {
         document.getElementById(input[i][j + 1]).getAttribute("fill") !==
         document.getElementById(input[i][j]).getAttribute("fill")
       ) {
-        return false;
+        return;
       }
     }
   }
@@ -103,21 +112,31 @@ function checkSolved(input) {
   ready = false;
   successfulSolve = true;
 }
-function resetStrokes(input) {
-  for (let i = 0; i < input.length; i++) {
-    for (let j = 0; j < input[i].length; j++) {
-      let tri = document.getElementById(input[i][j]);
-      tri.setAttribute("stroke-width", "1");
-    }
+function handleKeydown(event) {
+  if (event.repeat === true) { return; }
+  resetStrokes();
+  const fills = getFillAttributes();
+  if (ready == false) {
+    puzzles[puzzleSelector.value].updateCube(event);
+  } else if (isStopwatchRunning) {
+    puzzles[puzzleSelector.value].updateCube(event);
+    checkSolved();
+  } else if (successfulSolve) {
+    puzzles[puzzleSelector.value].updateCube(event);
+  } else {
+    startStopwatch();
+    puzzles[puzzleSelector.value].updateCube(event);
   }
+  puzzles[puzzleSelector.value].updateStrokes(oldFills);
 }
 function scramble() {
   reset();
-  randomize();
+  puzzles[puzzleSelector.value].randomize();
   ready = true;
   successfulSolve = false;
   resetStrokes();
 }
+
 
 document.getElementById("scramble").addEventListener("click", scramble);
 document.getElementById("reset").addEventListener("click", reset);
