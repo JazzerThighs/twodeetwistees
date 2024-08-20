@@ -3,6 +3,26 @@ export const rubiks_junior_2x2x2 = {
     subtitletext: "",
     controlstext: "",
     svgversions: [],
+    keys: [
+        "KeyE", // FRONT
+        "KeyD", // FRONTprime
+        "KeyI", // BACK
+        "KeyK", // BACKprime
+        "KeyU", // UP
+        "KeyJ", // UPprime
+        "KeyR", // DOWN
+        "KeyF", // DOWNprime
+        "KeyO", // RIGHT
+        "KeyL", // RIGHTprime
+        "KeyW", // LEFT
+        "KeyS", // LEFTprime
+        "KeyV", // X           
+        "KeyM", // Xprime      
+        "KeyC", // Y           
+        "Comma", // Yprime      
+        "KeyX", // Z           
+        "Period" // Zprime 
+    ],
     linkedtris: [
         ["LQ3F", "LQ4F", "LQ2F", "LQ1F"], //Front
         ["RQ3F", "RQ4F", "RQ2F", "RQ1F"], //Back
@@ -113,6 +133,87 @@ export const rubiks_junior_2x2x2 = {
         ["LQ3F", "RQ4U"],
         ["LQ2U", "LQ3F"]
     ], //L
-    
+    resetHighlights: function () {
+
+    },
+    reset: function () {
+
+    },
+    getPermutation: function () {
+
+    },
+    updateHighlights: function (oldPerm) {
+
+    },
+    permuteCube: function (swaps, prime) {
+
+    },
+    updateCube: function (e) {
+        switch (e.code) {
+            case keys[0]:
+                this.permuteCube(this.FRONT, false);
+                break;
+            case keys[1]:
+                this.permuteCube(this.FRONT, true);
+                break;
+            case keys[2]:
+                this.permuteCube(this.BACK, false);
+                break;
+            case keys[3]:
+                this.permuteCube(this.BACK, true);
+                break;
+            case keys[4]:
+                this.permuteCube(this.UP, false);
+                break;
+            case keys[5]:
+                this.permuteCube(this.UP, true);
+                break;
+            case keys[6]:
+                this.permuteCube(this.DOWN, false);
+                break;
+            case keys[7]:
+                this.permuteCube(this.DOWN, true);
+                break;
+            case keys[8]:
+                this.permuteCube(this.RIGHT, false);
+                break;
+            case keys[9]:
+                this.permuteCube(this.RIGHT, true);
+                break;
+            case keys[10]:
+                this.permuteCube(this.LEFT, false);
+                break;
+            case keys[11]:
+                this.permuteCube(this.LEFT, true);
+                break;
+            case keys[12]:
+                this.permuteCube(this.RIGHT, false);
+                this.permuteCube(this.LEFT, true);
+                break;
+            case keys[13]:
+                this.permuteCube(this.RIGHT, true);
+                this.permuteCube(this.LEFT, false);
+                break;
+            case keys[14]:
+                this.permuteCube(this.UP, false);
+                this.permuteCube(this.DOWN, true);
+                break;
+            case keys[15]:
+                this.permuteCube(this.UP, true);
+                this.permuteCube(this.DOWN, false);
+                break;
+            case keys[16]:
+                this.permuteCube(this.FRONT, false);
+                this.permuteCube(this.BACK, false);
+                break;
+            case keys[17]:
+                this.permuteCube(this.FRONT, true);
+                this.permuteCube(this.BACK, true);
+                break;
+        }
+    },
+    randomize: function () {
+
+    },
     
 }

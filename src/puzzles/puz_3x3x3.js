@@ -3,6 +3,33 @@ export const rubiks_cube_3x3x3 = {
     subtitletext: "",
     controlstext: "",
     svgversions: [],
+    keys: [
+        "KeyE", // FRONT
+        "KeyD", // FRONTprime
+        "KeyI", // BACK
+        "KeyK", // BACKprime
+        "KeyU", // UP
+        "KeyJ", // UPprime
+        "KeyR", // DOWN
+        "KeyF", // DOWNprime
+        "KeyO", // RIGHT
+        "KeyL", // RIGHTprime
+        "KeyW", // LEFT
+        "KeyS", // LEFTprime
+      
+        "KeyT", // E-Slice      //12
+        "KeyY", // E-Sliceprime //13
+        "KeyG", // M-Slice      //14
+        "KeyH", // M-Sliceprime //15
+        "KeyB", // S-Slice      //16
+        "KeyN", // S-Sliceprime //17
+        "KeyV", // X            //18
+        "KeyM", // Xprime       //19
+        "KeyC", // Y            //20
+        "Comma", // Yprime       //21
+        "KeyX", // Z            //22
+        "Period" // Zprime       //23
+    ],
     linkedtris: [
         ["LQ3F", "LQ4F", "LQ2F", "LQ1F", "oC", "ogF", "obF", "owF", "oyF"], //Front
         ["RQ3F", "RQ4F", "RQ2F", "RQ1F", "rC", "rgF", "rbF", "rwF", "ryF"], //Back
@@ -229,6 +256,205 @@ export const rubiks_cube_3x3x3 = {
         ["gyS", "byF"],
         ["byF", "bwS"]
     ], //S
+    resetHighlights: function () {
+        for (let i = 0; i < this.linkedtris.length; i++) {
+            for (let j = 0; j < this.linkedtris[i].length; j++) {
+                let tri = document.getElementById(this.linkedtris[i][j]);
+                tri.setAttribute("stroke-width", "1");
+            }
+        }
+    },
+    reset: function () {
+        for (let i = 0; i < this.linkedtris.length; i++) {
+            for (let j = 0; j < this.linkedtris[i].length; j++) {
+                let tri = document.getElementById(this.linkedtris[i][j]);
+                tri.setAttribute("fill", this.colors[i]);
+                tri.setAttribute("stroke", "black");
+                tri.setAttribute("stroke-linecap", "round");
+                tri.setAttribute("stroke-linejoin", "round");
+            }
+        }
+    },
+    getPermutation: function () {
+        let perm = [[], []];
+        for (let i = 0; i < this.cubies.length; i++) {
+            perm[0].push([]);
+            for (let j = 0; j < this.cubies[i].length; j++) {
+                let tri = document.getElementById(this.cubies[i][j]);
+                perm[0][i].push(tri.getAttribute("fill"));
+            }
+        }
+        for (let i = 0; i < this.slices.length; i++) {
+            perm[1].push([]);
+            for (let j = 0; j < this.slices[i].length; j++) {
+                let tri = document.getElementById(this.slices[i][j]);
+                perm[1][i].push(tri.getAttribute("fill"));
+            }
+        }
+        return perm;
+    },
+    updateHighlights: function (oldPerm) {
+        const [c1, c2] = this.getPermutation();
+        for (let i = 0; i < this.cubies.length; i++) {
+            let changed = false;
+            for (let j = 0; j < this.cubies[i].length; j++) {
+                if (c1[i][j] !== oldPerm[0][i][j]) {
+                    changed = true;
+                    break;
+                }
+            }
+            if (changed) {
+                for (let k = 0; k < this.cubies[i].length; k++) {
+                    let tri = document.getElementById(this.cubies[i][k]);
+                    tri.setAttribute("stroke-width", "7");
+                }
+            }
+        }
+        
+        for (let i = 0; i < this.slices.length; i++) {
+            if (( c2[i][1] !== oldPerm[1][i][1] ||
+                c2[i][2] !== oldPerm[1][i][2] ) && 
+                ( c2[i][3] !== oldPerm[1][i][3] ||
+                c2[i][4] !== oldPerm[1][i][4] )) 
+            {
+                for (let k = 0; k < this.slices[i].length; k++) {
+                    let tri = document.getElementById(this.slices[i][k]);
+                    tri.setAttribute("stroke-width", "5");
+                }
+            }
+        }
+    },
+    permuteCube: function (swaps, prime) {
+        const elements = {};
+        const colors = {};
 
+        if (prime === false) {
+            swaps.forEach(([from, to]) => {
+                elements[from] = document.getElementById(from);
+                elements[to] = document.getElementById(to);
+            });
+            swaps.forEach(([from, to]) => {
+                colors[to] = elements[from].getAttribute("fill");
+            });
+        } else {
+            swaps.forEach(([to, from]) => {
+                elements[from] = document.getElementById(from);
+                elements[to] = document.getElementById(to);
+            });
+            swaps.forEach(([to, from]) => {
+                colors[to] = elements[from].getAttribute("fill");
+            });
+        }
     
+        Object.keys(colors).forEach((key) => {
+            elements[key].setAttribute("fill", colors[key]);
+        });
+    },
+    updateCube: function (e) {
+        switch (e.code) {
+            case keys[0]:
+              this.permuteCube(this.FRONT, false);
+              break;
+            case keys[1]:
+              this.permuteCube(this.FRONT, true);
+              break;
+            case keys[2]:
+              this.permuteCube(this.BACK, false);
+              break;
+            case keys[3]:
+              this.permuteCube(this.BACK, true);
+              break;
+            case keys[4]:
+              this.permuteCube(this.UP, false);
+              break;
+            case keys[5]:
+              this.permuteCube(this.UP, true);
+              break;
+            case keys[6]:
+              this.permuteCube(this.DOWN, false);
+              break;
+            case keys[7]:
+              this.permuteCube(this.DOWN, true);
+              break;
+            case keys[8]:
+              this.permuteCube(this.RIGHT, false);
+              break;
+            case keys[9]:
+              this.permuteCube(this.RIGHT, true);
+              break;
+            case keys[10]:
+              this.permuteCube(this.LEFT, false);
+              break;
+            case keys[11]:
+              this.permuteCube(this.LEFT, true);
+              break;
+            case keys[12]:
+              this.permuteCube(this.ESlice, false);
+              break;
+            case keys[13]:
+              this.permuteCube(this.ESlice, true);
+              break;
+            case keys[14]:
+              this.permuteCube(this.MSlice, false);
+              break;
+            case keys[15]:
+              this.permuteCube(this.MSlice, true);
+              break;
+            case keys[16]:
+              this.permuteCube(this.SSlice, false);
+              break;
+            case keys[17]:
+              this.permuteCube(this.SSlice, true);
+              break;
+            case keys[18]:
+              this.permuteCube(this.RIGHT, false);
+              this.permuteCube(this.LEFT, true);
+              this.permuteCube(this.MSlice, true);
+              break;
+            case keys[19]:
+              this.permuteCube(this.RIGHT, true);
+              this.permuteCube(this.LEFT, false);
+              this.permuteCube(this.MSlice, false);
+              break;
+            case keys[20]:
+              this.permuteCube(this.UP, false);
+              this.permuteCube(this.DOWN, true);
+              this.permuteCube(this.ESlice, true);
+              break;
+            case keys[21]:
+              this.permuteCube(this.UP, true);
+              this.permuteCube(this.DOWN, false);
+              this.permuteCube(this.ESlice, false);
+              break;
+            case keys[22]:
+              this.permuteCube(this.FRONT, false);
+              this.permuteCube(this.BACK, false);
+              this.permuteCube(this.SSlice, false);
+              break;
+            case keys[23]:
+              this.permuteCube(this.FRONT, true);
+              this.permuteCube(this.BACK, true);
+              this.permuteCube(this.SSlice, true);
+              break;
+          }
+    },
+    randomize: function () {
+        let sequence = [];
+        while (sequence.length < 25) {
+          const randomKey = this.keys[Math.floor(Math.random() * 18)];
+          if (
+            sequence.length < 2 ||
+            !(
+              sequence[sequence.length - 1] === randomKey &&
+              sequence[sequence.length - 2] === randomKey
+            )
+          ) {
+            sequence.push(randomKey);
+          }
+        }
+        sequence.forEach((key) => {
+          const event = new KeyboardEvent("keydown", { code: key });
+          document.dispatchEvent(event);
+        });
+    }
 }
