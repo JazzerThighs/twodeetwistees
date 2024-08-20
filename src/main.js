@@ -10,6 +10,7 @@ const puzzles = {
 };
 const puzzleSelector = document.getElementById("puzzleselector");
 const versionSelector = document.getElementById("versionselector");
+const scramblestr = document.getElementById("scramblenotation");
 const svgcontainer = document.getElementById("puzzlecontainer");
 
 function updatePuzzleSelection() {
@@ -77,17 +78,29 @@ function resetStrokes() {
   }
 }
 function reset() {
+  scramblestr.innerHTML = "";
+  let input = puzzles[puzzleSelector.value].linkedtris;
+  for (let i = 0; i < input.length; i++) {
+      for (let j = 0; j < input[i].length; j++) {
+          let tri = document.getElementById(input[i][j]);
+          tri.setAttribute("stroke-linecap", "round");
+          tri.setAttribute("stroke-linejoin", "round");
+      }
+  }
+  ready = false;
+  stopAndResetStopwatch();
   puzzles[puzzleSelector.value].reset();
+  resetStrokes();
 }
 
 function checkSolved() {
   let stopwatchstring = generateStopwatchString();
   let input = puzzles[puzzleSelector.value].linkedtris;
   for (let i = 0; i < input.length; i++) {
-    for (let j = 0; j < input[i].length - 1; j++) {
+    for (let j = 1; j < input[i].length; j++) {
       if (
-        document.getElementById(input[i][j + 1]).getAttribute("fill") !==
-        document.getElementById(input[i][j]).getAttribute("fill")
+        document.getElementById(input[i][j]).getAttribute("fill") !==
+        document.getElementById(input[i][j - 1]).getAttribute("fill")
       ) {
         return;
       }

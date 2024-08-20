@@ -113,7 +113,6 @@ export const rubiks_junior_2x2x2 = {
         ["LQ3F", "RQ4U"],
         ["LQ2U", "LQ3F"]
     ], //L
-    handleKeydown: function () { },
     
     
 }

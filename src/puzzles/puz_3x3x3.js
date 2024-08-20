@@ -229,7 +229,6 @@ export const rubiks_cube_3x3x3 = {
         ["gyS", "byF"],
         ["byF", "bwS"]
     ], //S
-    handleKeydown: function () { },
-    
+
     
 }

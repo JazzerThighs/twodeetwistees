@@ -89,24 +89,22 @@ export const melindas_physical_2x2x2x2 = {
         "KeyA", // gyro
         "Semicolon", // gyro'
 
-        "KeyZ", // Ux
+        // // HyperSpeedCube 2^4 Grip Bindings (Non-canonical Moves for Melinda's Physical 2^4 Hypercube):
+        // "KeyW", // Grip L Cell
+        // "KeyE", // Grip U Cell
+        // "KeyR", // Grip B Cell
+        // "KeyS", // Grip F Cell
+        // "KeyD", // Grip I Cell
+        // "KeyF", // Grip R Cell
+        // "KeyC", // Grip D Cell
+        // "KeyV", // Grip O Cell
 
-        // HyperSpeedCube 2^4 Grip Bindings (Non-canonical Moves for Melinda's Physical 2^4 Hypercube):
-        "KeyW", // Grip L Cell
-        "KeyE", // Grip U Cell
-        "KeyR", // Grip B Cell
-        "KeyS", // Grip F Cell
-        "KeyD", // Grip I Cell
-        "KeyF", // Grip R Cell
-        "KeyC", // Grip D Cell
-        "KeyV", // Grip O Cell
-
-        "KeyI", // Gripped(x)
-        "KeyK", // Gripped(x')
-        "KeyJ", // Gripped(y)
-        "KeyL", // Gripped(y')
-        "KeyU", // Gripped(z')
-        "KeyO" // Gripped(z)
+        // "KeyI", // Gripped(x)
+        // "KeyK", // Gripped(x')
+        // "KeyJ", // Gripped(y)
+        // "KeyL", // Gripped(y')
+        // "KeyU", // Gripped(z')
+        // "KeyO" // Gripped(z)
     ],
     move: {
         Lx: function (p) {
@@ -1153,8 +1151,20 @@ export const melindas_physical_2x2x2x2 = {
                 ],
             ];
         },
+        Uy2: function (p) {
+            return [
+                [p[1][2], p[1][3], p[1][0], p[1][1], p[0][4], p[0][5], p[0][6], p[0][7]],
+                [p[0][2], p[0][3], p[0][0], p[0][1], p[1][4], p[1][5], p[1][6], p[1][7]],
+            ];
+        },
+        Dy2: function (p) {
+            return [
+                [p[0][0], p[0][1], p[0][2], p[0][3], p[1][6], p[1][7], p[1][4], p[1][5]],
+                [p[1][0], p[1][1], p[1][2], p[1][3], p[0][6], p[0][7], p[0][4], p[0][5]],
+            ];
+        },
         LRx: function (input) {
-            /* Rotates the input state of the cube around the x-axis*/
+            /* Rotates the input state of the L or R cell around the x-axis*/
             input = [
                 input[3],
                 input[2],
@@ -1171,7 +1181,7 @@ export const melindas_physical_2x2x2x2 = {
             return input;
         },
         LRy: function (input) {
-            /* Rotates the input state of the cube around the y-axis*/
+            /* Rotates the input state of the L or R cell around the y-axis*/
             input = [
                 input[3],
                 input[0],
@@ -1188,7 +1198,7 @@ export const melindas_physical_2x2x2x2 = {
             return input;
         },
         LRz: function (input) {
-            /* Rotates the input state of the cube around the z-axis*/
+            /* Rotates the input state of the L or R cell around the z-axis*/
             input = [
                 input[4],
                 input[0],
@@ -1203,18 +1213,6 @@ export const melindas_physical_2x2x2x2 = {
                 [input[i][1], input[i][3]] = [input[i][3], input[i][1]];
             }
             return input;
-        },
-        Uy2: function (p) {
-            return [
-                [p[1][2], p[1][3], p[1][0], p[1][1], p[0][4], p[0][5], p[0][6], p[0][7]],
-                [p[0][2], p[0][3], p[0][0], p[0][1], p[1][4], p[1][5], p[1][6], p[1][7]],
-            ];
-        },
-        Dy2: function (p) {
-            return [
-                [p[0][0], p[0][1], p[0][2], p[0][3], p[1][6], p[1][7], p[1][4], p[1][5]],
-                [p[1][0], p[1][1], p[1][2], p[1][3], p[0][6], p[0][7], p[0][4], p[0][5]],
-            ];
         },
         hashtag: function (p) {
             return [
@@ -1240,58 +1238,302 @@ export const melindas_physical_2x2x2x2 = {
                 ],
             ];
         },
-        gyro: function (p) {
-            return [
-                [
-                    [p[0][4][1], p[0][4][0], p[0][4][2], p[0][4][3]],
-                    [p[0][5][1], p[0][5][0], p[0][5][2], p[0][5][3]],
-                    [p[0][6][1], p[0][6][0], p[0][6][2], p[0][6][3]],
-                    [p[0][7][1], p[0][7][0], p[0][7][2], p[0][7][3]],
-                    [p[1][5][1], p[1][5][0], p[1][5][2], p[1][5][3]],
-                    [p[1][4][1], p[1][4][0], p[1][4][2], p[1][4][3]],
-                    [p[1][7][1], p[1][7][0], p[1][7][2], p[1][7][3]],
-                    [p[1][6][1], p[1][6][0], p[1][6][2], p[1][6][3]],
-                ],
-                [
-                    [p[0][1][1], p[0][1][0], p[0][1][2], p[0][1][3]],
-                    [p[0][0][1], p[0][0][0], p[0][0][2], p[0][0][3]],
-                    [p[0][3][1], p[0][3][0], p[0][3][2], p[0][3][3]],
-                    [p[0][2][1], p[0][2][0], p[0][2][2], p[0][2][3]],
-                    [p[1][0][1], p[1][0][0], p[1][0][2], p[1][0][3]],
-                    [p[1][1][1], p[1][1][0], p[1][1][2], p[1][1][3]],
-                    [p[1][2][1], p[1][2][0], p[1][2][2], p[1][2][3]],
-                    [p[1][3][1], p[1][3][0], p[1][3][2], p[1][3][3]],
-                ],
-            ];
-        },
-        gyro_prime: function (p) {
-            return [
-                [
-                    [p[1][1][1], p[1][1][0], p[1][1][2], p[1][1][3]],
-                    [p[1][0][1], p[1][0][0], p[1][0][2], p[1][0][3]],
-                    [p[1][3][1], p[1][3][0], p[1][3][2], p[1][3][3]],
-                    [p[1][2][1], p[1][2][0], p[1][2][2], p[1][2][3]],
-                    [p[0][0][1], p[0][0][0], p[0][0][2], p[0][0][3]],
-                    [p[0][1][1], p[0][1][0], p[0][1][2], p[0][1][3]],
-                    [p[0][2][1], p[0][2][0], p[0][2][2], p[0][2][3]],
-                    [p[0][3][1], p[0][3][0], p[0][3][2], p[0][3][3]],
-                ],
-                [
-                    [p[1][4][1], p[1][4][0], p[1][4][2], p[1][4][3]],
-                    [p[1][5][1], p[1][5][0], p[1][5][2], p[1][5][3]],
-                    [p[1][6][1], p[1][6][0], p[1][6][2], p[1][6][3]],
-                    [p[1][7][1], p[1][7][0], p[1][7][2], p[1][7][3]],
-                    [p[0][5][1], p[0][5][0], p[0][5][2], p[0][5][3]],
-                    [p[0][4][1], p[0][4][0], p[0][4][2], p[0][4][3]],
-                    [p[0][7][1], p[0][7][0], p[0][7][2], p[0][7][3]],
-                    [p[0][6][1], p[0][6][0], p[0][6][2], p[0][6][3]],
-                ],
-            ];
-        },
     },
-    updateCube: function () {
-        
-    }
+    updateCube: function (e) {
+        const m = this.move;
+        switch (e.code) {
+            case keys[0]:
+              this.puzzleState = m.Lx(this.puzzleState);
+              break;
+            case keys[1]:
+              this.puzzleState = m.Lx_prime(this.puzzleState);
+              break;
+            case keys[2]:
+              this.puzzleState = m.Ly(this.puzzleState);
+              break;
+            case keys[3]:
+              this.puzzleState = m.Ly_prime(this.puzzleState);
+              break;
+            case keys[4]:
+              this.puzzleState = m.Lz(this.puzzleState);
+              break;
+            case keys[5]:
+              this.puzzleState = m.Lz_prime(this.puzzleState);
+              break;
+            case keys[6]:
+              this.puzzleState = m.Rx(this.puzzleState);
+              break;
+            case keys[7]:
+              this.puzzleState = m.Rx_prime(this.puzzleState);
+              break;
+            case keys[8]:
+              this.puzzleState = m.Ry(this.puzzleState);
+              break;
+            case keys[9]:
+              this.puzzleState = m.Ry_prime(this.puzzleState);
+              break;
+            case keys[10]:
+              this.puzzleState = m.Rz(this.puzzleState);
+              break;
+            case keys[11]:
+              this.puzzleState = m.Rz_prime(this.puzzleState);
+              break;
+            case keys[12]:
+              this.puzzleState = m.Uy2(this.puzzleState);
+              break;
+            case keys[13]:
+              this.puzzleState = m.Dy2(this.puzzleState);
+              break;
+            case keys[14]:
+              this.puzzleState = m.Ix(this.puzzleState);
+              break;
+            case keys[15]:
+              this.puzzleState = m.Ix(this.puzzleState);
+              break;
+            case keys[16]:
+              this.puzzleState = m.Ix_prime(this.puzzleState);
+              break;
+            case keys[17]:
+              this.puzzleState = m.Ix_prime(this.puzzleState);
+              break;
+            case keys[18]:
+              this.puzzleState = m.gyro_z(this.puzzleState);
+              break;
+            case keys[19]:
+              this.puzzleState = m.gyro_z_prime(this.puzzleState);
+              break;
+        }
+        this.permuteCube(this.puzzleState);
+    },
+    permuteCube: function (p) {
+        let orderedtris = [
+            p[0][0][3],
+            p[0][3][3],
+            p[0][4][3],
+            p[0][7][3],
+            p[0][0][0],
+            p[0][3][0],
+            p[0][7][0],
+            p[0][4][0],
+            p[0][3][2],
+            p[0][2][2],
+            p[0][7][2],
+            p[0][6][2],
+            p[0][3][0],
+            p[0][2][0],
+            p[0][6][0],
+            p[0][7][0],
+            p[0][7][1],
+            p[0][6][1],
+            p[0][4][1],
+            p[0][5][1],
+            p[0][7][0],
+            p[0][6][0],
+            p[0][5][0],
+            p[0][4][0],
+            p[0][1][2],
+            p[0][0][2],
+            p[0][5][2],
+            p[0][4][2],
+            p[0][1][0],
+            p[0][0][0],
+            p[0][4][0],
+            p[0][5][0],
+            p[0][0][1],
+            p[0][1][1],
+            p[0][3][1],
+            p[0][2][1],
+            p[0][0][0],
+            p[0][1][0],
+            p[0][2][0],
+            p[0][3][0],
+            p[0][2][3],
+            p[0][1][3],
+            p[0][6][3],
+            p[0][5][3],
+            p[0][2][0],
+            p[0][1][0],
+            p[0][5][0],
+            p[0][6][0],
+            p[1][1][2],
+            p[1][0][2],
+            p[1][5][2],
+            p[1][4][2],
+            p[1][1][0],
+            p[1][0][0],
+            p[1][4][0],
+            p[1][5][0],
+            p[1][3][2],
+            p[1][2][2],
+            p[1][7][2],
+            p[1][6][2],
+            p[1][3][0],
+            p[1][2][0],
+            p[1][6][0],
+            p[1][7][0],
+            p[1][7][1],
+            p[1][6][1],
+            p[1][4][1],
+            p[1][5][1],
+            p[1][7][0],
+            p[1][6][0],
+            p[1][5][0],
+            p[1][4][0],
+            p[1][2][3],
+            p[1][1][3],
+            p[1][6][3],
+            p[1][5][3],
+            p[1][2][0],
+            p[1][1][0],
+            p[1][5][0],
+            p[1][6][0],
+            p[1][0][3],
+            p[1][3][3],
+            p[1][4][3],
+            p[1][7][3],
+            p[1][0][0],
+            p[1][3][0],
+            p[1][7][0],
+            p[1][4][0],
+            p[1][0][1],
+            p[1][1][1],
+            p[1][3][1],
+            p[1][2][1],
+            p[1][0][0],
+            p[1][1][0],
+            p[1][2][0],
+            p[1][3][0],
+        ];/* LR UD FB IO */
+      
+        for (let i = 0; i < orderedtris.length; i++) {
+            let tri = document.getElementById(`tri${i}`);
+            tri.setAttribute('fill', this.colors[orderedtris[i]]);
+        }
+    },
+    reset: function () {
+        this.puzzleState = [
+            [
+                [0, 7, 2, 5],
+                [0, 7, 2, 4],
+                [0, 7, 3, 4],
+                [0, 7, 3, 5],
+                [0, 6, 2, 5],
+                [0, 6, 2, 4],
+                [0, 6, 3, 4],
+                [0, 6, 3, 5]
+            ],
+            [
+                [1, 7, 2, 4],
+                [1, 7, 2, 5],
+                [1, 7, 3, 5],
+                [1, 7, 3, 4],
+                [1, 6, 2, 4],
+                [1, 6, 2, 5],
+                [1, 6, 3, 5],
+                [1, 6, 3, 4]
+            ]
+        ];
+        this.permuteCube(this.puzzleState);
+    },
+    LorRTurn: function (p, num) {
+        const m = this.move;
+        if (num == 0) {
+          return m.LRy(p);
+        } else if (num == 1) {
+          return m.LRy(m.LRy(m.LRy(p)));
+        } else if (num == 2) {
+          return m.LRy(m.LRy(p));
+        } else if (num == 3) {
+          return m.LRx(m.LRx(p));
+        } else if (num == 4) {
+          return m.LRz(m.LRz(p));
+        } else if (num == 5) {
+          return m.LRy(m.LRx(m.LRx(p)));
+        } else if (num == 6) {
+          return m.LRy(m.LRy(m.LRy(m.LRx(m.LRx(p)))));
+        } else if (num == 7) {
+          return m.LRx(p);
+        } else if (num == 8) {
+          return m.LRy(m.LRx(p));
+        } else if (num == 9) {
+          return m.LRy(m.LRy(m.LRy(m.LRx(p))));
+        } else if (num == 10) {
+          return m.LRy(m.LRy(m.LRx(p)));
+        } else if (num == 11) {
+          return m.LRx(m.LRx(m.LRx(p)));
+        } else if (num == 12) {
+          return m.LRy(m.LRx(m.LRx(m.LRx(p))));
+        } else if (num == 13) {
+          return m.LRy(m.LRy(m.LRy(m.LRx(m.LRx(m.LRx(p))))));
+        } else if (num == 14) {
+          return m.LRy(m.LRy(m.LRx(m.LRx(m.LRx(p)))));
+        } else if (num == 15) {
+          return m.LRz(p);
+        } else if (num == 16) {
+          return m.LRy(m.LRz(p));
+        } else if (num == 17) {
+          return m.LRy(m.LRy(m.LRy(m.LRz(p))));
+        } else if (num == 18) {
+          return m.LRy(m.LRy(m.LRz(p)));
+        } else if (num == 19) {
+          return m.LRz(m.LRz(m.LRz(p)));
+        } else if (num == 20) {
+          return m.LRy(m.LRz(m.LRz(m.LRz(p))));
+        } else if (num == 21) {
+          return m.LRy(m.LRy(m.LRy(m.LRz(m.LRz(m.LRz(p))))));
+        } else if (num == 22) {
+          return m.LRy(m.LRy(m.LRz(m.LRz(m.LRz(p)))));
+        } else {
+          return p;
+        }    
+    },
+    randomize: function (puzzleState) {
+        /* Generates a random scramble sequence and draws the resulting 4D Rubik's cube, based on the scrambling algorithm from https://2x2x2x2scrambler.github.io/ */
+        const physmoves = [
+            "y",
+            "y'",
+            "y2",
+            "x2",
+            "z2",
+            "x2,y",
+            "x2,y'",
+            "x",
+            "x,y",
+            "x,y'",
+            "x,y2",
+            "x'",
+            "x',y",
+            "x',y'",
+            "x',y2",
+            "z",
+            "z,y",
+            "z,y'",
+            "z,y2",
+            "z'",
+            "z',y",
+            "z',y'",
+            "z',y2",
+            ""
+        ];
+        const scrambleLength = [16, 14, 12];
+        let str =  "<br>Scramble Notation: ";
+        let scrambleLen = scrambleLength[(Math.floor(Math.random() * 3))];
+        for (let i = 0; i < scrambleLen; i++) {
+            let Lrand = Math.floor(Math.random() * 24);
+            puzzleState[0] = this.LorRturn(this.puzzleState[0], Lrand);
+            let Rrand = Math.floor(Math.random() * 24);
+            puzzleState[1] = this.LorRturn(this.puzzleState[1], Rrand);
+            puzzleState = this.move.hashtag(this.puzzleState);
+            let Lrandstr = "";  
+            let Rrandstr = "";  
+            if (Lrand === 24) {Lrandstr = "L" + physmoves[Lrand] + " ";}
+            if (Rrand === 24) {Rrandstr = "R" + physmoves[Rrand] + " ";}
+            str += Lrandstr + Rrandstr + "# ";
+        }
+        str.replace("# # ", "");
+        document.getElementById("scramblenotation").innerHTML = str;
+        this.permuteCube(this.puzzleState);
+    },
 };
 
 /* 
