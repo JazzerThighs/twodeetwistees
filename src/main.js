@@ -65,32 +65,15 @@ function stopAndResetStopwatch() {
   isStopwatchRunning = false;
   successfulSolve = false;
 }
-function getFillAttributes() {
-  return puzzles[puzzleSelector.value].getFillAttributes();
-}
-function resetStrokes() {
-  let input = puzzles[puzzleSelector.value].linkedtris;
-  for (let i = 0; i < input.length; i++) {
-    for (let j = 0; j < input[i].length; j++) {
-      let tri = document.getElementById(input[i][j]);
-      tri.setAttribute("stroke-width", "1");
-    }
-  }
+function resetHighlights() {
+  puzzles[puzzleSelector.value].resetHighlights();
 }
 function reset() {
   scramblestr.innerHTML = "";
-  let input = puzzles[puzzleSelector.value].linkedtris;
-  for (let i = 0; i < input.length; i++) {
-      for (let j = 0; j < input[i].length; j++) {
-          let tri = document.getElementById(input[i][j]);
-          tri.setAttribute("stroke-linecap", "round");
-          tri.setAttribute("stroke-linejoin", "round");
-      }
-  }
   ready = false;
   stopAndResetStopwatch();
   puzzles[puzzleSelector.value].reset();
-  resetStrokes();
+  resetHighlights();
 }
 
 function checkSolved() {
@@ -115,8 +98,8 @@ function checkSolved() {
 }
 function handleKeydown(event) {
   if (event.repeat === true) { return; }
-  resetStrokes();
-  const fills = getFillAttributes();
+  resetHighlights();
+  const perm = puzzles[puzzleSelector.value].getPermutation();
   if (ready == false) {
     puzzles[puzzleSelector.value].updateCube(event);
   } else if (isStopwatchRunning) {
@@ -128,14 +111,14 @@ function handleKeydown(event) {
     startStopwatch();
     puzzles[puzzleSelector.value].updateCube(event);
   }
-  puzzles[puzzleSelector.value].updateStrokes(oldFills);
+  puzzles[puzzleSelector.value].updateHighlights(perm);
 }
 function scramble() {
   reset();
   puzzles[puzzleSelector.value].randomize();
   ready = true;
   successfulSolve = false;
-  resetStrokes();
+  resetHighlights();
 }
 
 

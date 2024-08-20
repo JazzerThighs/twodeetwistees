@@ -1411,6 +1411,12 @@ export const melindas_physical_2x2x2x2 = {
         }
     },
     reset: function () {
+        for (let i = 0; i <= 95; i++) {
+            let tri = document.getElementById(`tri${i}`);
+            tri.setAttribute("stroke", "black");
+            tri.setAttribute("stroke-linecap", "round");
+            tri.setAttribute("stroke-linejoin", "round");
+        }
         this.puzzleState = [
             [
                 [0, 7, 2, 5],
@@ -1434,6 +1440,43 @@ export const melindas_physical_2x2x2x2 = {
             ]
         ];
         this.permuteCube(this.puzzleState);
+    },
+    resetHighlights: function () {
+        for (let i = 0; i < 96; i++) {
+            let tri = document.getElementById(`tri${i}`);
+            tri.setAttribute("stroke-width", "0.33");
+            let parent = tri.parentNode;
+            parent.insertBefore(tri, parent.firstChild);
+        }
+    },
+    getPermutation: function () {
+        let perm = [];
+        for (let i = 0; i < 96; i++) {
+            let polygon = document.getElementById(`tri${i}`);
+            perm.push(polygon.getAttribute("fill"));
+        }
+        return perm;
+    },
+    updateHighlights: function (oldPerm) {
+        const newPerm = this.getPermutation();
+        for (let i = 0; i < this.cubies.length; i++) {
+            const cubie = this.cubies[i];
+            let changed = false;
+            for (let j = 0; j < cubie.length; j++) {
+                if (oldPerm[cubie[j]] !== newPerm[cubie[j]]) {
+                    changed = true;
+                    break;
+                }
+            }
+            if (changed) {
+                for (let k = 0; k < cubie.length; k++) {
+                    let tri = document.getElementById(`tri${cubie[k]}`);
+                    tri.setAttribute("stroke-width", "1.75");
+                    let parent = tri.parentNode;
+                    parent.appendChild(tri);
+                }
+            }
+        }
     },
     LorRTurn: function (p, num) {
         const m = this.move;
