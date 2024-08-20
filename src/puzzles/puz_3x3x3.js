@@ -10,8 +10,8 @@ export const rubiks_cube_3x3x3 = {
         ["LQ3U", "LQ4U", "RQ3U", "RQ4U", "yC", "oyS", "ryS", "gyS", "byS"], //Down
         ["LQ4S", "LQ1S", "RQ3S", "RQ2S", "gC", "ogS", "rgS", "gwF", "gyF"], //Right
         ["LQ3S", "LQ2S", "RQ4S", "RQ1S", "bC", "obS", "rbS", "bwF", "byF"] //Left
-      ],
-      cubies: [
+    ],
+    cubies: [
         ["LQ1F", "LQ1S", "LQ1U"],
         ["LQ2F", "LQ2S", "LQ2U"],
         ["LQ3F", "LQ3S", "LQ3U"],
@@ -32,7 +32,7 @@ export const rubiks_cube_3x3x3 = {
         ["gyF", "gyS"],
         ["bwF", "bwS"],
         ["byF", "byS"]
-      ],
+    ],
     slices: [
         ["oC", "owF", "owS", "oyF", "oyS"],
         ["oC", "obF", "obS", "ogF", "ogS"],
@@ -46,7 +46,7 @@ export const rubiks_cube_3x3x3 = {
         ["wC", "bwF", "bwS", "gwF", "gwS"],
         ["yC", "oyF", "oyS", "ryF", "ryS"],
         ["yC", "byF", "byS", "gyF", "gyS"]
-      ],
+    ],
     colors: [
         "orange",
         "red",

@@ -22,6 +22,7 @@ function updatePuzzleSelection() {
       versionSelector.appendChild(option);
   });
   updateVersionSelection();
+  reset();
 }
 function updateVersionSelection() {
   svgcontainer.innerHTML = puzzles[puzzleSelector.value].svgversions[versionSelector.value];
@@ -32,6 +33,7 @@ let startTime;
 let ready = false;
 let isStopwatchRunning = false;
 let successfulSolve = false;
+let attributeForCheckingColor = "fill";
 
 function startStopwatch() {
   successfulSolve = false;
@@ -82,8 +84,8 @@ function checkSolved() {
   for (let i = 0; i < input.length; i++) {
     for (let j = 1; j < input[i].length; j++) {
       if (
-        document.getElementById(input[i][j]).getAttribute("fill") !==
-        document.getElementById(input[i][j - 1]).getAttribute("fill")
+        document.getElementById(input[i][j]).getAttribute(attributeForCheckingColor) !==
+        document.getElementById(input[i][j - 1]).getAttribute(attributeForCheckingColor)
       ) {
         return;
       }
@@ -125,7 +127,8 @@ function scramble() {
 document.getElementById("scramble").addEventListener("click", scramble);
 document.getElementById("reset").addEventListener("click", reset);
 document.addEventListener("keydown", handleKeydown);
-
+svgcontainer.innerHTML = puzzles[puzzleSelector.value].svgversions[0];
+reset();
 // let greetInputEl;
 // let greetMsgEl;
 
