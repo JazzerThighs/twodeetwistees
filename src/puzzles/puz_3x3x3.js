@@ -306,7 +306,7 @@ export const rubiks_cube_3x3x3 = {
             if (changed) {
                 for (let k = 0; k < this.cubies[i].length; k++) {
                     let tri = document.getElementById(this.cubies[i][k]);
-                    tri.setAttribute("stroke-width", "7");
+                    tri.setAttribute("stroke-width", "5");
                 }
             }
         }

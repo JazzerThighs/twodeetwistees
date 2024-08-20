@@ -140,13 +140,59 @@ export const rubiks_junior_2x2x2 = {
 
     },
     getPermutation: function () {
-
+        let perm = [];
+        for (let i = 0; i < this.cubies.length; i++) {
+            perm.push([]);
+            for (let j = 0; j < this.cubies[i].length; j++) {
+                let tri = document.getElementById(this.cubies[i][j]);
+                perm[i].push(tri.getAttribute("fill"));
+            }
+        }
+        return perm;
     },
     updateHighlights: function (oldPerm) {
-
+        const currPerm = this.getPermutation();
+        for (let i = 0; i < this.cubies.length; i++) {
+            let changed = false;
+            for (let j = 0; j < this.cubies[i].length; j++) {
+                if (currPerm[i][j] !== oldPerm[i][j]) {
+                    changed = true;
+                    break;
+                }
+            }
+            if (changed) {
+                for (let k = 0; k < this.cubies[i].length; k++) {
+                    let tri = document.getElementById(this.cubies[i][k]);
+                    tri.setAttribute("stroke-width", "7");
+                }
+            }
+        }
     },
     permuteCube: function (swaps, prime) {
+        const elements = {};
+        const colors = {};
 
+        if (prime === false) {
+            swaps.forEach(([from, to]) => {
+                elements[from] = document.getElementById(from);
+                elements[to] = document.getElementById(to);
+            });
+            swaps.forEach(([from, to]) => {
+                colors[to] = elements[from].getAttribute("fill");
+            });
+        } else {
+            swaps.forEach(([to, from]) => {
+                elements[from] = document.getElementById(from);
+                elements[to] = document.getElementById(to);
+            });
+            swaps.forEach(([to, from]) => {
+                colors[to] = elements[from].getAttribute("fill");
+            });
+        }
+    
+        Object.keys(colors).forEach((key) => {
+            elements[key].setAttribute("fill", colors[key]);
+        });
     },
     updateCube: function (e) {
         switch (e.code) {
@@ -213,7 +259,23 @@ export const rubiks_junior_2x2x2 = {
         }
     },
     randomize: function () {
-
+        let sequence = [];
+        while (sequence.length < 25) {
+          const randomKey = this.keys[Math.floor(Math.random() * 18)];
+          if (
+            sequence.length < 2 ||
+            !(
+              sequence[sequence.length - 1] === randomKey &&
+              sequence[sequence.length - 2] === randomKey
+            )
+          ) {
+            sequence.push(randomKey);
+          }
+        }
+        sequence.forEach((key) => {
+          const event = new KeyboardEvent("keydown", { code: key });
+          document.dispatchEvent(event);
+        });
     },
     
 }
