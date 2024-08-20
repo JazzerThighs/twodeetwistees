@@ -1289,7 +1289,9 @@ export const melindas_physical_2x2x2x2 = {
             ];
         },
     },
-
+    updateCube: function () {
+        
+    }
 };
 
 /* 

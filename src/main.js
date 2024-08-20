@@ -55,20 +55,7 @@ function generateStopwatchString() {
   ).padStart(3, "0")}`;
 }
 function updateStopwatch() {
-  const elapsedTime = Date.now() - startTime;
-  const milliseconds = Math.floor(elapsedTime);
-  const seconds = Math.floor(elapsedTime / 1000);
-  const minutes = Math.floor(seconds / 60);
-  const hours = Math.floor(minutes / 60);
-  const displayMilliseconds = milliseconds % 1000;
-  const displaySeconds = seconds % 60;
-  const displayMinutes = minutes % 60;
-  const displayHours = hours % 24;
-  document.getElementById("stopwatch").textContent = `${String(
-    displayHours
-  ).padStart(2, "0")}:${String(displayMinutes).padStart(2, "0")}:${String(
-    displaySeconds
-  ).padStart(2, "0")}:${String(displayMilliseconds).padStart(3, "0")}`;
+  document.getElementById("stopwatch").textContent = generateStopwatchString();
 }
 function stopAndResetStopwatch() {
   clearInterval(stopwatchInterval);
@@ -76,6 +63,9 @@ function stopAndResetStopwatch() {
   document.getElementById("stopwatch").textContent = "00:00:00:000";
   isStopwatchRunning = false;
   successfulSolve = false;
+}
+function getFillAttributes() {
+  return puzzles[puzzleSelector.value].getFillAttributes();
 }
 function resetStrokes() {
   let input = puzzles[puzzleSelector.value].linkedtris;
@@ -89,12 +79,10 @@ function resetStrokes() {
 function reset() {
   puzzles[puzzleSelector.value].reset();
 }
-function getFillAttributes() {
-  return puzzles[puzzleSelector.value].getFillAttributes();
-}
+
 function checkSolved() {
-  let input = puzzles[puzzleSelector.value].linkedtris;
   let stopwatchstring = generateStopwatchString();
+  let input = puzzles[puzzleSelector.value].linkedtris;
   for (let i = 0; i < input.length; i++) {
     for (let j = 0; j < input[i].length - 1; j++) {
       if (
