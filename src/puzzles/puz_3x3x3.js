@@ -346,86 +346,86 @@ export const rubiks_cube_3x3x3 = {
   },
   updateCube: function (e) {
     switch (e.code) {
-      case keys[0]:
+      case this.keys[0]:
         this.permuteCube(this.FRONT, false);
         break;
-      case keys[1]:
+      case this.keys[1]:
         this.permuteCube(this.FRONT, true);
         break;
-      case keys[2]:
+      case this.keys[2]:
         this.permuteCube(this.BACK, false);
         break;
-      case keys[3]:
+      case this.keys[3]:
         this.permuteCube(this.BACK, true);
         break;
-      case keys[4]:
+      case this.keys[4]:
         this.permuteCube(this.UP, false);
         break;
-      case keys[5]:
+      case this.keys[5]:
         this.permuteCube(this.UP, true);
         break;
-      case keys[6]:
+      case this.keys[6]:
         this.permuteCube(this.DOWN, false);
         break;
-      case keys[7]:
+      case this.keys[7]:
         this.permuteCube(this.DOWN, true);
         break;
-      case keys[8]:
+      case this.keys[8]:
         this.permuteCube(this.RIGHT, false);
         break;
-      case keys[9]:
+      case this.keys[9]:
         this.permuteCube(this.RIGHT, true);
         break;
-      case keys[10]:
+      case this.keys[10]:
         this.permuteCube(this.LEFT, false);
         break;
-      case keys[11]:
+      case this.keys[11]:
         this.permuteCube(this.LEFT, true);
         break;
-      case keys[12]:
+      case this.keys[12]:
         this.permuteCube(this.ESlice, false);
         break;
-      case keys[13]:
+      case this.keys[13]:
         this.permuteCube(this.ESlice, true);
         break;
-      case keys[14]:
+      case this.keys[14]:
         this.permuteCube(this.MSlice, false);
         break;
-      case keys[15]:
+      case this.keys[15]:
         this.permuteCube(this.MSlice, true);
         break;
-      case keys[16]:
+      case this.keys[16]:
         this.permuteCube(this.SSlice, false);
         break;
-      case keys[17]:
+      case this.keys[17]:
         this.permuteCube(this.SSlice, true);
         break;
-      case keys[18]:
+      case this.keys[18]:
         this.permuteCube(this.RIGHT, false);
         this.permuteCube(this.LEFT, true);
         this.permuteCube(this.MSlice, true);
         break;
-      case keys[19]:
+      case this.keys[19]:
         this.permuteCube(this.RIGHT, true);
         this.permuteCube(this.LEFT, false);
         this.permuteCube(this.MSlice, false);
         break;
-      case keys[20]:
+      case this.keys[20]:
         this.permuteCube(this.UP, false);
         this.permuteCube(this.DOWN, true);
         this.permuteCube(this.ESlice, true);
         break;
-      case keys[21]:
+      case this.keys[21]:
         this.permuteCube(this.UP, true);
         this.permuteCube(this.DOWN, false);
         this.permuteCube(this.ESlice, false);
         break;
-      case keys[22]:
+      case this.keys[22]:
         this.permuteCube(this.FRONT, false);
         this.permuteCube(this.BACK, false);
         this.permuteCube(this.SSlice, false);
         break;
-      case keys[23]:
+      case this.keys[23]:
         this.permuteCube(this.FRONT, true);
         this.permuteCube(this.BACK, true);
         this.permuteCube(this.SSlice, true);

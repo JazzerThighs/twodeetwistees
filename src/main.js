@@ -1,8 +1,8 @@
 const { invoke } = window.__TAURI__.tauri;
 
-import melindas_physical_2x2x2x2 from "./puzzles/puz_melindas_physical_2x2x2x2";
-import rubiks_junior_2x2x2 from "./puzzles/puz_2x2x2";
-import rubiks_cube_3x3x3 from "./puzzles/puz_3x3x3";
+import { melindas_physical_2x2x2x2 } from "./puzzles/puz_melindas_physical_2x2x2x2.js";
+import { rubiks_junior_2x2x2 } from "./puzzles/puz_2x2x2.js";
+import { rubiks_cube_3x3x3 } from "./puzzles/puz_3x3x3.js";
 const puzzles = {
   rubiks_junior_2x2x2: rubiks_junior_2x2x2,
   rubiks_cube_3x3x3: rubiks_cube_3x3x3,
@@ -15,7 +15,7 @@ const svgcontainer = document.getElementById("puzzlecontainer");
 
 function updatePuzzleSelection() {
   versionSelector.innerHTML = '';
-  puzzles[puzzleSelector.value].svgversions.forEach((literal, index) => {
+  puzzles[puzzleSelector.value].svgversions.forEach((_literal, index) => {
       const option = document.createElement('option');
       option.value = index;
       option.textContent = `Layout ${index + 1}`;

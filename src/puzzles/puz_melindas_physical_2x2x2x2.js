@@ -1424,64 +1424,64 @@ export const melindas_physical_2x2x2x2 = {
   updateCube: function (e) {
     const m = this.move;
     switch (e.code) {
-      case keys[0]:
+      case this.keys[0]:
         this.puzzleState = m.Lx(this.puzzleState);
         break;
-      case keys[1]:
+      case this.keys[1]:
         this.puzzleState = m.Lx_prime(this.puzzleState);
         break;
-      case keys[2]:
+      case this.keys[2]:
         this.puzzleState = m.Ly(this.puzzleState);
         break;
-      case keys[3]:
+      case this.keys[3]:
         this.puzzleState = m.Ly_prime(this.puzzleState);
         break;
-      case keys[4]:
+      case this.keys[4]:
         this.puzzleState = m.Lz(this.puzzleState);
         break;
-      case keys[5]:
+      case this.keys[5]:
         this.puzzleState = m.Lz_prime(this.puzzleState);
         break;
-      case keys[6]:
+      case this.keys[6]:
         this.puzzleState = m.Rx(this.puzzleState);
         break;
-      case keys[7]:
+      case this.keys[7]:
         this.puzzleState = m.Rx_prime(this.puzzleState);
         break;
-      case keys[8]:
+      case this.keys[8]:
         this.puzzleState = m.Ry(this.puzzleState);
         break;
-      case keys[9]:
+      case this.keys[9]:
         this.puzzleState = m.Ry_prime(this.puzzleState);
         break;
-      case keys[10]:
+      case this.keys[10]:
         this.puzzleState = m.Rz(this.puzzleState);
         break;
-      case keys[11]:
+      case this.keys[11]:
         this.puzzleState = m.Rz_prime(this.puzzleState);
         break;
-      case keys[12]:
+      case this.keys[12]:
         this.puzzleState = m.Uy2(this.puzzleState);
         break;
-      case keys[13]:
+      case this.keys[13]:
         this.puzzleState = m.Dy2(this.puzzleState);
         break;
-      case keys[14]:
+      case this.keys[14]:
         this.puzzleState = m.Ix(this.puzzleState);
         break;
-      case keys[15]:
+      case this.keys[15]:
         this.puzzleState = m.Ix(this.puzzleState);
         break;
-      case keys[16]:
+      case this.keys[16]:
         this.puzzleState = m.Ix_prime(this.puzzleState);
         break;
-      case keys[17]:
+      case this.keys[17]:
         this.puzzleState = m.Ix_prime(this.puzzleState);
         break;
-      case keys[18]:
+      case this.keys[18]:
         this.puzzleState = m.gyro_z(this.puzzleState);
         break;
-      case keys[19]:
+      case this.keys[19]:
         this.puzzleState = m.gyro_z_prime(this.puzzleState);
         break;
     }
