@@ -1660,7 +1660,7 @@ export const melindas_physical_2x2x2x2 = {
       }
     }
   },
-  LorRTurn: function (p, num) {
+  LorRturn: function (p, num) {
     const m = this.move;
     if (num == 0) {
       return m.LRy(p);
