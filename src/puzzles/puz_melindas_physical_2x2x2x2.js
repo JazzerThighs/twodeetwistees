@@ -1345,56 +1345,41 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    LRx: function (input) {
-      /* Rotates the input state of the L or R cell around the x-axis*/
-      input = [
-        input[3],
-        input[2],
-        input[6],
-        input[7],
-        input[0],
-        input[1],
-        input[5],
-        input[4],
+    LRx: function (c) {
+      return [
+        [c[3][0], c[3][2], c[3][1], c[3][3]],
+        [c[2][0], c[2][2], c[2][1], c[2][3]],
+        [c[6][0], c[6][2], c[6][1], c[6][3]],
+        [c[7][0], c[7][2], c[7][1], c[7][3]],
+        [c[0][0], c[0][2], c[0][1], c[0][3]],
+        [c[1][0], c[1][2], c[1][1], c[1][3]],
+        [c[5][0], c[5][2], c[5][1], c[5][3]],
+        [c[4][0], c[4][2], c[4][1], c[4][3]],
       ];
-      for (var i = 0; i < 8; i++) {
-        [input[i][1], input[i][2]] = [input[i][2], input[i][1]];
-      }
-      return input;
     },
-    LRy: function (input) {
-      /* Rotates the input state of the L or R cell around the y-axis*/
-      input = [
-        input[3],
-        input[0],
-        input[1],
-        input[2],
-        input[7],
-        input[4],
-        input[5],
-        input[6],
+    LRy: function (c) {
+      return [
+        [c[3][0], c[3][1], c[3][3], c[3][2]],
+        [c[0][0], c[0][1], c[0][3], c[0][2]],
+        [c[1][0], c[1][1], c[1][3], c[1][2]],
+        [c[2][0], c[2][1], c[2][3], c[2][2]],
+        [c[7][0], c[7][1], c[7][3], c[7][2]],
+        [c[4][0], c[4][1], c[4][3], c[4][2]],
+        [c[5][0], c[5][1], c[5][3], c[5][2]],
+        [c[6][0], c[6][1], c[6][3], c[6][2]],
       ];
-      for (var i = 0; i < 8; i++) {
-        [input[i][3], input[i][2]] = [input[i][2], input[i][3]];
-      }
-      return input;
     },
-    LRz: function (input) {
-      /* Rotates the input state of the L or R cell around the z-axis*/
-      input = [
-        input[4],
-        input[0],
-        input[3],
-        input[7],
-        input[5],
-        input[1],
-        input[2],
-        input[6],
+    LRz: function (c) {
+      return [
+        [c[4][0], c[4][3], c[4][2], c[4][1]],
+        [c[0][0], c[0][3], c[0][2], c[0][1]],
+        [c[3][0], c[3][3], c[3][2], c[3][1]],
+        [c[7][0], c[7][3], c[7][2], c[7][1]],
+        [c[5][0], c[5][3], c[5][2], c[5][1]],
+        [c[1][0], c[1][3], c[1][2], c[1][1]],
+        [c[2][0], c[2][3], c[2][2], c[2][1]],
+        [c[6][0], c[6][3], c[6][2], c[6][1]],
       ];
-      for (var i = 0; i < 8; i++) {
-        [input[i][1], input[i][3]] = [input[i][3], input[i][1]];
-      }
-      return input;
     },
     hashtag: function (p) {
       return [
@@ -1745,16 +1730,16 @@ export const melindas_physical_2x2x2x2 = {
     let scrambleLen = scrambleLength[Math.floor(Math.random() * 3)];
     for (let i = 0; i < scrambleLen; i++) {
       let Lrand = Math.floor(Math.random() * 24);
-      puzzleState[0] = this.LorRturn(this.puzzleState[0], Lrand);
+      this.puzzleState[0] = this.LorRturn(this.puzzleState[0], Lrand);
       let Rrand = Math.floor(Math.random() * 24);
-      puzzleState[1] = this.LorRturn(this.puzzleState[1], Rrand);
-      puzzleState = this.move.hashtag(this.puzzleState);
+      this.puzzleState[1] = this.LorRturn(this.puzzleState[1], Rrand);
+      this.puzzleState = this.move.hashtag(this.puzzleState);
       let Lrandstr = '';
       let Rrandstr = '';
-      if (Lrand === 24) {
+      if (Lrand !== 24) {
         Lrandstr = 'L' + physmoves[Lrand] + ' ';
       }
-      if (Rrand === 24) {
+      if (Rrand !== 24) {
         Rrandstr = 'R' + physmoves[Rrand] + ' ';
       }
       str += Lrandstr + Rrandstr + '# ';

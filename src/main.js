@@ -16,16 +16,17 @@ const svgcontainer = document.getElementById("puzzlecontainer");
 function updatePuzzleSelection() {
   versionSelector.innerHTML = '';
   puzzles[puzzleSelector.value].svgversions.forEach((_literal, index) => {
-      const option = document.createElement('option');
-      option.value = index;
-      option.textContent = `Layout ${index + 1}`;
-      versionSelector.appendChild(option);
+    const option = document.createElement('option');
+    option.value = index;
+    option.textContent = `Layout ${index + 1}`;
+    versionSelector.appendChild(option);
   });
   updateVersionSelection();
   reset();
 }
 function updateVersionSelection() {
   svgcontainer.innerHTML = puzzles[puzzleSelector.value].svgversions[versionSelector.value];
+  reset();
 }
 
 let stopwatchInterval;
@@ -127,21 +128,11 @@ function scramble() {
 document.getElementById("scramble").addEventListener("click", scramble);
 document.getElementById("reset").addEventListener("click", reset);
 document.addEventListener("keydown", handleKeydown);
-svgcontainer.innerHTML = puzzles[puzzleSelector.value].svgversions[0];
-reset();
-// let greetInputEl;
-// let greetMsgEl;
+document.getElementById("puzzleselector").addEventListener("change", function () {
+  updatePuzzleSelection();
+});
+document.getElementById("versionselector").addEventListener("change", function () {
+  updateVersionSelection();
+});
+updatePuzzleSelection();
 
-// async function greet() {
-//   // Learn more about Tauri commands at https://tauri.app/v1/guides/features/command
-//   greetMsgEl.textContent = await invoke("greet", { name: greetInputEl.value });
-// }
-
-// window.addEventListener("DOMContentLoaded", () => {
-//   greetInputEl = document.querySelector("#greet-input");
-//   greetMsgEl = document.querySelector("#greet-msg");
-//   document.querySelector("#greet-form").addEventListener("submit", (e) => {
-//     e.preventDefault();
-//     greet();
-//   });
-// });
