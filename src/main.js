@@ -8,10 +8,14 @@ const puzzles = {
   rubiks_cube_3x3x3: rubiks_cube_3x3x3,
   melindas_physical_2x2x2x2: melindas_physical_2x2x2x2,
 };
+const titlecontainer = document.getElementById("titlecontainer");
+const subtitlecontainer = document.getElementById("subtitlecontainer");
 const puzzleSelector = document.getElementById("puzzleselector");
 const versionSelector = document.getElementById("versionselector");
-const scramblestr = document.getElementById("scramblenotation");
-const svgcontainer = document.getElementById("puzzlecontainer");
+const scramblenotation = document.getElementById("scramblenotation");
+const puzzlecontainer = document.getElementById("puzzlecontainer");
+const controlscontainer = document.getElementById("controlscontainer");
+
 
 function updatePuzzleSelection() {
   versionSelector.innerHTML = '';
@@ -25,7 +29,10 @@ function updatePuzzleSelection() {
   reset();
 }
 function updateVersionSelection() {
-  svgcontainer.innerHTML = puzzles[puzzleSelector.value].svgversions[versionSelector.value];
+  titlecontainer.innerHTML = puzzles[puzzleSelector.value].titletext;
+  subtitlecontainer.innerHTML = puzzles[puzzleSelector.value].subtitletext;
+  puzzlecontainer.innerHTML = puzzles[puzzleSelector.value].svgversions[versionSelector.value];
+  controlscontainer.innerHTML = puzzles[puzzleSelector.value].controlstext;
   reset();
 }
 
@@ -72,7 +79,7 @@ function resetHighlights() {
   puzzles[puzzleSelector.value].resetHighlights();
 }
 function reset() {
-  scramblestr.innerHTML = "";
+  scramblenotation.innerHTML = "";
   ready = false;
   stopAndResetStopwatch();
   puzzles[puzzleSelector.value].reset();
