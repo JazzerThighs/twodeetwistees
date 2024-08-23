@@ -1,12 +1,15 @@
 const { invoke } = window.__TAURI__.tauri;
 
-import { melindas_physical_2x2x2x2 } from "./puzzles/puz_melindas_physical_2x2x2x2.js";
 import { rubiks_junior_2x2x2 } from "./puzzles/puz_2x2x2.js";
 import { rubiks_cube_3x3x3 } from "./puzzles/puz_3x3x3.js";
+import { melindas_physical_2x2x2x2_canonical } from "./puzzles/puz_melindas_physical_2x2x2x2_canonical.js";
+import { melindas_physical_2x2x2x2_noncanonical } from "./puzzles/puz_melindas_physical_2x2x2x2_noncanonical.js";
+
 const puzzles = {
   rubiks_junior_2x2x2: rubiks_junior_2x2x2,
   rubiks_cube_3x3x3: rubiks_cube_3x3x3,
-  melindas_physical_2x2x2x2: melindas_physical_2x2x2x2,
+  melindas_physical_2x2x2x2_canonical: melindas_physical_2x2x2x2_canonical,
+  melindas_physical_2x2x2x2_noncanonical: melindas_physical_2x2x2x2_noncanonical,
 };
 const titlecontainer = document.getElementById("titlecontainer");
 const subtitlecontainer = document.getElementById("subtitlecontainer");
@@ -111,17 +114,20 @@ function handleKeydown(event) {
   resetHighlights();
   const perm = puzzles[puzzleSelector.value].getPermutation();
   if (ready == false) {
-    puzzles[puzzleSelector.value].updateCube(event);
+    puzzles[puzzleSelector.value].handleKeydown(event);
   } else if (isStopwatchRunning) {
-    puzzles[puzzleSelector.value].updateCube(event);
+    puzzles[puzzleSelector.value].handleKeydown(event);
     checkSolved();
   } else if (successfulSolve) {
-    puzzles[puzzleSelector.value].updateCube(event);
+    puzzles[puzzleSelector.value].handleKeydown(event);
   } else {
     startStopwatch();
-    puzzles[puzzleSelector.value].updateCube(event);
+    puzzles[puzzleSelector.value].handleKeydown(event);
   }
   puzzles[puzzleSelector.value].updateHighlights(perm);
+}
+function handleKeyup(event) {
+  puzzles[puzzleSelector.value].handleKeyup();
 }
 function scramble() {
   reset();
@@ -131,10 +137,10 @@ function scramble() {
   resetHighlights();
 }
 
-
 document.getElementById("scramble").addEventListener("click", scramble);
 document.getElementById("reset").addEventListener("click", reset);
 document.addEventListener("keydown", handleKeydown);
+document.addEventListener("keyup", handleKeyup);
 document.getElementById("puzzleselector").addEventListener("change", function () {
   updatePuzzleSelection();
 });

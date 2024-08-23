@@ -202,7 +202,7 @@ export const rubiks_junior_2x2x2 = {
       elements[key].setAttribute('fill', colors[key]);
     });
   },
-  updateCube: function (e) {
+  handleKeydown: function (e) {
     switch (e.code) {
       case this.keys[0]:
         this.permuteCube(this.FRONT, false);
@@ -266,6 +266,7 @@ export const rubiks_junior_2x2x2 = {
         break;
     }
   },
+  handleKeyup: function (_e) {},
   randomize: function () {
     let sequence = [];
     while (sequence.length < 25) {

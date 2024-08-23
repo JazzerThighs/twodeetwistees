@@ -1,9 +1,8 @@
-export const melindas_physical_2x2x2x2 = {
-  titletext: "Melinda's 2×2×2×2 Physical Hypercube 2D Projection",
+export const melindas_physical_2x2x2x2_noncanonical = {
+  titletext: "Melinda's 2×2×2×2 Physical Hypercube 2D Projection (Noncanonical Moves)",
   subtitletext:
     'Code repurposed from <a href="https://2x2x2x2scrambler.github.io/">Grant\'s Physical 2^4 Scrambler</a>',
-  controlstext:
-    'Controls: <i>(Canonical Moves for Melinda\'s Physical 2^4)</i><br />Lx &nbsp;&nbsp; -> "KeyR"&nbsp;&nbsp;&nbsp;&nbsp; Rx&nbsp;&nbsp;&nbsp; -> "KeyU" <br />Lx\' &nbsp; -> "KeyF"&nbsp;&nbsp;&nbsp;&nbsp; Rx\'&nbsp;&nbsp; -> "KeyJ" <br />Ly &nbsp;&nbsp; -> "KeyE"&nbsp;&nbsp;&nbsp;&nbsp; Ry&nbsp;&nbsp;&nbsp; -> "KeyK" <br />Ly\' &nbsp; -> "KeyD"&nbsp;&nbsp;&nbsp;&nbsp; Ry\'&nbsp;&nbsp; -> "KeyI" <br />Lz &nbsp;&nbsp; -> "KeyW"&nbsp;&nbsp;&nbsp;&nbsp; Rz&nbsp;&nbsp;&nbsp; -> "KeyL" <br />Lz\' &nbsp; -> "KeyS"&nbsp;&nbsp;&nbsp;&nbsp; Rz\'&nbsp;&nbsp; -> "KeyO" <br />Uy2 &nbsp; -> "KeyQ"&nbsp;&nbsp;&nbsp;&nbsp; Dy2&nbsp;&nbsp; -> "KeyP" <br />ix &nbsp;&nbsp; -> "KeyT"&nbsp;&nbsp;&nbsp;&nbsp; ix&nbsp;&nbsp;&nbsp; -> "KeyY" <br />ix\'&nbsp;&nbsp; -> "KeyG"&nbsp;&nbsp;&nbsp;&nbsp; ix\'&nbsp;&nbsp;&nbsp;-> "KeyH" <br />gyro &nbsp;-> "KeyA"&nbsp;&nbsp;&nbsp;&nbsp; gyro\'&nbsp;-> "Semicolon"</br>',
+  controlstext: "",
   svgversions: [
     '<svg id="cube" viewbox="-5 -5 375 135" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" style="display: block; max-width: 95%; height: auto; padding: 1rem"><polygon id="tri1" points="25.000,50.000 50.000,50.000 25.000,25.000" /><polygon id="tri2" points="25.000,50.000 0.000,50.000 25.000,75.000" /><polygon id="tri3" points="25.000,50.000 50.000,50.000 25.000,75.000" /><polygon id="tri0" points="25.000,50.000 0.000,50.000 25.000,25.000" /><polygon id="tri5" points="50.000,25.000 25.000,25.000 50.000,50.000" /><polygon id="tri4" points="0.000,25.000 25.000,25.000 0.000,50.000" /><polygon id="tri6" points="50.000,75.000 25.000,75.000 50.000,50.000" /><polygon id="tri8" points="75.000,50.000 50.000,50.000 75.000,25.000" /><polygon id="tri7" points="0.000,75.000 25.000,75.000 0.000,50.000" /><polygon id="tri9" points="75.000,50.000 100.000,50.000 75.000,25.000" /><polygon id="tri11" points="75.000,50.000 100.000,50.000 75.000,75.000" /><polygon id="tri10" points="75.000,50.000 50.000,50.000 75.000,75.000" /><polygon id="tri12" points="50.000,25.000 75.000,25.000 50.000,50.000" /><polygon id="tri15" points="50.000,75.000 75.000,75.000 50.000,50.000" /><polygon id="tri13" points="100.000,25.000 75.000,25.000 100.000,50.000" /><polygon id="tri17" points="75.000,100.000 100.000,100.000 75.000,75.000" /><polygon id="tri14" points="100.000,75.000 75.000,75.000 100.000,50.000" /><polygon id="tri18" points="75.000,100.000 50.000,100.000 75.000,125.000" /><polygon id="tri19" points="75.000,100.000 100.000,100.000 75.000,125.000" /><polygon id="tri16" points="75.000,100.000 50.000,100.000 75.000,75.000" /><polygon id="tri21" points="100.000,75.000 75.000,75.000 100.000,100.000" /><polygon id="tri22" points="100.000,125.000 75.000,125.000 100.000,100.000" /><polygon id="tri23" points="50.000,125.000 75.000,125.000 50.000,100.000" /><polygon id="tri24" points="150.000,25.000 125.000,25.000 150.000,0.000" /><polygon id="tri20" points="50.000,75.000 75.000,75.000 50.000,100.000" /><polygon id="tri25" points="150.000,25.000 175.000,25.000 150.000,0.000" /><polygon id="tri26" points="150.000,25.000 125.000,25.000 150.000,50.000" /><polygon id="tri29" points="175.000,0.000 150.000,0.000 175.000,25.000" /><polygon id="tri30" points="175.000,50.000 150.000,50.000 175.000,25.000" /><polygon id="tri31" points="125.000,50.000 150.000,50.000 125.000,25.000" /><polygon id="tri27" points="150.000,25.000 175.000,25.000 150.000,50.000" /><polygon id="tri35" points="87.500,12.500 112.500,12.500 75.000,25.000" /><polygon id="tri28" points="125.000,0.000 150.000,0.000 125.000,25.000" /><polygon id="tri33" points="87.500,12.500 112.500,12.500 100.000,0.000" /><polygon id="tri32" points="87.500,12.500 62.500,12.500 100.000,0.000" /><polygon id="tri37" points="125.000,0.000 100.000,0.000 112.500,12.500" /><polygon id="tri36" points="75.000,0.000 100.000,0.000 62.500,12.500" /><polygon id="tri34" points="87.500,12.500 62.500,12.500 75.000,25.000" /><polygon id="tri39" points="50.000,25.000 75.000,25.000 62.500,12.500" /><polygon id="tri41" points="112.500,37.500 125.000,25.000 112.500,12.500" /><polygon id="tri40" points="112.500,37.500 100.000,50.000 112.500,12.500" /><polygon id="tri43" points="112.500,37.500 125.000,25.000 112.500,62.500" /><polygon id="tri38" points="100.000,25.000 75.000,25.000 112.500,12.500" /><polygon id="tri42" points="112.500,37.500 100.000,50.000 112.500,62.500" /><polygon id="tri44" points="100.000,25.000 112.500,12.500 100.000,50.000" /><polygon id="tri46" points="125.000,50.000 112.500,62.500 125.000,25.000" /><polygon id="tri45" points="125.000,0.000 112.500,12.500 125.000,25.000" /><polygon id="tri47" points="100.000,75.000 112.500,62.500 100.000,50.000" /><polygon id="tri50" points="200.000,25.000 175.000,25.000 200.000,50.000" /><polygon id="tri49" points="200.000,25.000 225.000,25.000 200.000,0.000" /><polygon id="tri51" points="200.000,25.000 225.000,25.000 200.000,50.000" /><polygon id="tri52" points="175.000,0.000 200.000,0.000 175.000,25.000" /><polygon id="tri48" points="200.000,25.000 175.000,25.000 200.000,0.000" /><polygon id="tri57" points="275.000,50.000 300.000,50.000 275.000,25.000" /><polygon id="tri55" points="175.000,50.000 200.000,50.000 175.000,25.000" /><polygon id="tri56" points="275.000,50.000 250.000,50.000 275.000,25.000" /><polygon id="tri54" points="225.000,50.000 200.000,50.000 225.000,25.000" /><polygon id="tri58" points="275.000,50.000 250.000,50.000 275.000,75.000" /><polygon id="tri60" points="250.000,25.000 275.000,25.000 250.000,50.000" /><polygon id="tri59" points="275.000,50.000 300.000,50.000 275.000,75.000" /><polygon id="tri62" points="300.000,75.000 275.000,75.000 300.000,50.000" /><polygon id="tri63" points="250.000,75.000 275.000,75.000 250.000,50.000" /><polygon id="tri64" points="275.000,100.000 250.000,100.000 275.000,75.000" /><polygon id="tri53" points="225.000,0.000 200.000,0.000 225.000,25.000" /><polygon id="tri66" points="275.000,100.000 250.000,100.000 275.000,125.000" /><polygon id="tri65" points="275.000,100.000 300.000,100.000 275.000,75.000" /><polygon id="tri67" points="275.000,100.000 300.000,100.000 275.000,125.000" /><polygon id="tri68" points="250.000,75.000 275.000,75.000 250.000,100.000" /><polygon id="tri70" points="300.000,125.000 275.000,125.000 300.000,100.000" /><polygon id="tri61" points="300.000,25.000 275.000,25.000 300.000,50.000" /><polygon id="tri69" points="300.000,75.000 275.000,75.000 300.000,100.000" /><polygon id="tri71" points="250.000,125.000 275.000,125.000 250.000,100.000" /><polygon id="tri74" points="325.000,50.000 300.000,50.000 325.000,75.000" /><polygon id="tri73" points="325.000,50.000 350.000,50.000 325.000,25.000" /><polygon id="tri72" points="325.000,50.000 300.000,50.000 325.000,25.000" /><polygon id="tri76" points="300.000,25.000 325.000,25.000 300.000,50.000" /><polygon id="tri75" points="325.000,50.000 350.000,50.000 325.000,75.000" /><polygon id="tri77" points="350.000,25.000 325.000,25.000 350.000,50.000" /><polygon id="tri80" points="237.500,37.500 225.000,25.000 237.500,12.500" /><polygon id="tri79" points="300.000,75.000 325.000,75.000 300.000,50.000" /><polygon id="tri81" points="237.500,37.500 250.000,50.000 237.500,12.500" /><polygon id="tri83" points="237.500,37.500 250.000,50.000 237.500,62.500" /><polygon id="tri82" points="237.500,37.500 225.000,25.000 237.500,62.500" /><polygon id="tri84" points="225.000,0.000 237.500,12.500 225.000,25.000" /><polygon id="tri78" points="350.000,75.000 325.000,75.000 350.000,50.000" /><polygon id="tri87" points="225.000,50.000 237.500,62.500 225.000,25.000" /><polygon id="tri85" points="250.000,25.000 237.500,12.500 250.000,50.000" /><polygon id="tri90" points="262.500,12.500 237.500,12.500 275.000,25.000" /><polygon id="tri88" points="262.500,12.500 237.500,12.500 250.000,0.000" /><polygon id="tri86" points="250.000,75.000 237.500,62.500 250.000,50.000" /><polygon id="tri91" points="262.500,12.500 287.500,12.500 275.000,25.000" /><polygon id="tri93" points="275.000,0.000 250.000,0.000 287.500,12.500" /><polygon id="tri89" points="262.500,12.500 287.500,12.500 250.000,0.000" /><polygon id="tri95" points="250.000,25.000 275.000,25.000 237.500,12.500" /><polygon id="tri94" points="300.000,25.000 275.000,25.000 287.500,12.500" /><polygon id="tri92" points="225.000,0.000 250.000,0.000 237.500,12.500" /></svg>',
   ],
@@ -68,48 +67,29 @@ export const melindas_physical_2x2x2x2 = {
       [1, 6, 3, 4],
     ],
   ],
-  keys: [
-    // Canonical Moves for Melinda's Physical 2^4 Hypercube:
-    'KeyR', // Lx
-    'KeyF', // Lx'
-    'KeyE', // Ly
-    'KeyD', // Ly'
-    'KeyW', // Lz
-    'KeyS', // Lz'
-    'KeyU', // Rx
-    'KeyJ', // Rx'
-    'KeyK', // Ry
-    'KeyI', // Ry'
-    'KeyL', // Rz
-    'KeyO', // Rz'
-    'KeyQ', // Uy2
-    'KeyP', // Dy2
-    'KeyT', // Ix
-    'KeyY', // Ix
-    'KeyG', // Ix'
-    'KeyH', // Ix'
-    'KeyA', // gyro
-    'Semicolon', // gyro'
-
-    // // HyperSpeedCube 2^4 Grip Bindings (Non-canonical Moves for Melinda's Physical 2^4 Hypercube):
-    // "KeyW", // Grip L Cell
-    // "KeyE", // Grip U Cell
-    // "KeyR", // Grip B Cell
-    // "KeyS", // Grip F Cell
-    // "KeyD", // Grip I Cell
-    // "KeyF", // Grip R Cell
-    // "KeyC", // Grip D Cell
-    // "KeyV", // Grip O Cell
-
-    // "KeyI", // Gripped(x)
-    // "KeyK", // Gripped(x')
-    // "KeyJ", // Gripped(y)
-    // "KeyL", // Gripped(y')
-    // "KeyU", // Gripped(z')
-    // "KeyO" // Gripped(z)
+  cellgripkeys: [
+    // HyperSpeedCube 2^4 Cell Grip Bindings (Non-canonical Moves for Melinda's Physical 2^4 Hypercube):
+    ['KeyW', false, 'L_'], // Grip L Cell
+    ['KeyE', false, 'U_'], // Grip U Cell
+    ['KeyR', false, 'B_'], // Grip B Cell
+    ['KeyS', false, 'F_'], // Grip F Cell
+    ['KeyD', false, 'I_'], // Grip I Cell
+    ['KeyF', false, 'R_'], // Grip R Cell
+    ['KeyC', false, 'D_'], // Grip D Cell
+    ['KeyV', false, 'O_'], // Grip O Cell
+    ['KeyX', false, 'gyro_'], // Grip Gyro (4D Rotate)
+  ],
+  movekeys: [
+    // HyperSpeedCube 2^4 Cell 3D Rotation Bindings (Non-canonical Moves for Melinda's Physical 2^4 Hypercube):
+    ['KeyI', 'x'],
+    ['KeyK', 'x_prime'],
+    ['KeyJ', 'y'],
+    ['KeyL', 'y_prime'],
+    ['KeyU', 'z_prime'],
+    ['KeyO', 'z'],
   ],
   move: {
-    Lx: function (p) {
+    L_x: function (p) {
       return [
         [
           [p[0][3][0], p[0][3][2], p[0][3][1], p[0][3][3]],
@@ -124,7 +104,7 @@ export const melindas_physical_2x2x2x2 = {
         p[1],
       ];
     },
-    Ly: function (p) {
+    L_y: function (p) {
       return [
         [
           [p[0][3][0], p[0][3][1], p[0][3][3], p[0][3][2]],
@@ -139,7 +119,7 @@ export const melindas_physical_2x2x2x2 = {
         p[1],
       ];
     },
-    Lz: function (p) {
+    L_z: function (p) {
       return [
         [
           [p[0][4][0], p[0][4][3], p[0][4][2], p[0][4][1]],
@@ -154,7 +134,7 @@ export const melindas_physical_2x2x2x2 = {
         p[1],
       ];
     },
-    Rx: function (p) {
+    R_x: function (p) {
       return [
         p[0],
         [
@@ -169,7 +149,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Ry: function (p) {
+    R_y: function (p) {
       return [
         p[0],
         [
@@ -184,7 +164,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Rz: function (p) {
+    R_z: function (p) {
       return [
         p[0],
         [
@@ -199,7 +179,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Ux: function (p) {
+    U_x: function (p) {
       return [
         [
           [p[0][3][0], p[0][3][1], p[0][3][3], p[0][3][2]],
@@ -223,7 +203,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Uy: function (p) {
+    U_y: function (p) {
       return [
         [
           p[0][2],
@@ -247,7 +227,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Uz: function (p) {
+    U_z: function (p) {
       return [
         [
           [p[0][1][3], p[0][1][1], p[0][1][2], p[0][1][0]],
@@ -271,7 +251,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Dx: function (p) {
+    D_x: function (p) {
       return [
         [
           p[0][0],
@@ -295,7 +275,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Dy: function (p) {
+    D_y: function (p) {
       return [
         [
           p[0][0],
@@ -319,7 +299,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Dz: function (p) {
+    D_z: function (p) {
       return [
         [
           p[0][0],
@@ -343,7 +323,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Fx: function (p) {
+    F_x: function (p) {
       return [
         [
           p[0][0],
@@ -367,7 +347,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Fy: function (p) {
+    F_y: function (p) {
       return [
         [
           p[0][0],
@@ -391,7 +371,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Fz: function (p) {
+    F_z: function (p) {
       return [
         [
           p[0][0],
@@ -415,7 +395,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Bx: function (p) {
+    B_x: function (p) {
       return [
         [
           [p[0][1][0], p[0][1][3], p[0][1][2], p[0][1][1]],
@@ -439,7 +419,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    By: function (p) {
+    B_y: function (p) {
       return [
         [
           p[1][0],
@@ -463,7 +443,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Bz: function (p) {
+    B_z: function (p) {
       return [
         [
           [p[0][1][3], p[0][1][1], p[0][1][2], p[0][1][0]],
@@ -487,7 +467,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Ix: function (p) {
+    I_x: function (p) {
       return [
         [
           p[0][0],
@@ -511,7 +491,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Iy: function (p) {
+    I_y: function (p) {
       return [
         [
           p[0][0],
@@ -535,7 +515,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Iz: function (p) {
+    I_z: function (p) {
       return [
         [
           p[0][0],
@@ -559,7 +539,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Ox: function (p) {
+    O_x: function (p) {
       return [
         [
           [p[0][3][0], p[0][3][2], p[0][3][1], p[0][3][3]],
@@ -583,7 +563,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Oy: function (p) {
+    O_y: function (p) {
       return [
         [
           [p[0][3][2], p[0][3][1], p[0][3][0], p[0][3][3]],
@@ -607,7 +587,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Oz: function (p) {
+    O_z: function (p) {
       return [
         [
           [p[0][4][1], p[0][4][0], p[0][4][2], p[0][4][3]],
@@ -631,7 +611,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Lx_prime: function (p) {
+    L_x_prime: function (p) {
       return [
         [
           [p[0][4][0], p[0][4][2], p[0][4][1], p[0][4][3]],
@@ -646,7 +626,7 @@ export const melindas_physical_2x2x2x2 = {
         p[1],
       ];
     },
-    Ly_prime: function (p) {
+    L_y_prime: function (p) {
       return [
         [
           [p[0][1][0], p[0][1][1], p[0][1][3], p[0][1][2]],
@@ -661,7 +641,7 @@ export const melindas_physical_2x2x2x2 = {
         p[1],
       ];
     },
-    Lz_prime: function (p) {
+    L_z_prime: function (p) {
       return [
         [
           [p[0][1][0], p[0][1][3], p[0][1][2], p[0][1][1]],
@@ -676,7 +656,7 @@ export const melindas_physical_2x2x2x2 = {
         p[1],
       ];
     },
-    Rx_prime: function (p) {
+    R_x_prime: function (p) {
       return [
         p[0],
         [
@@ -691,7 +671,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Ry_prime: function (p) {
+    R_y_prime: function (p) {
       return [
         p[0],
         [
@@ -706,7 +686,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Rz_prime: function (p) {
+    R_z_prime: function (p) {
       return [
         p[0],
         [
@@ -721,7 +701,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Ux_prime: function (p) {
+    U_x_prime: function (p) {
       return [
         [
           [p[0][1][0], p[0][1][1], p[0][1][3], p[0][1][2]],
@@ -745,7 +725,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Uy_prime: function (p) {
+    U_y_prime: function (p) {
       return [
         [
           p[1][0],
@@ -769,7 +749,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Uz_prime: function (p) {
+    U_z_prime: function (p) {
       return [
         [
           [p[1][1][3], p[1][1][1], p[1][1][2], p[1][1][0]],
@@ -793,7 +773,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Dx_prime: function (p) {
+    D_x_prime: function (p) {
       return [
         [
           p[0][0],
@@ -817,7 +797,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Dy_prime: function (p) {
+    D_y_prime: function (p) {
       return [
         [
           p[0][0],
@@ -841,7 +821,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Dz_prime: function (p) {
+    D_z_prime: function (p) {
       return [
         [
           p[0][0],
@@ -865,7 +845,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Fx_prime: function (p) {
+    F_x_prime: function (p) {
       return [
         [
           p[0][0],
@@ -889,7 +869,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Fy_prime: function (p) {
+    F_y_prime: function (p) {
       return [
         [
           p[0][0],
@@ -913,7 +893,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Fz_prime: function (p) {
+    F_z_prime: function (p) {
       return [
         [
           p[0][0],
@@ -937,7 +917,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Bx_prime: function (p) {
+    B_x_prime: function (p) {
       return [
         [
           [p[0][4][0], p[0][4][3], p[0][4][2], p[0][4][1]],
@@ -961,7 +941,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    By_prime: function (p) {
+    B_y_prime: function (p) {
       return [
         [
           p[0][5],
@@ -985,7 +965,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Bz_prime: function (p) {
+    B_z_prime: function (p) {
       return [
         [
           [p[1][1][3], p[1][1][1], p[1][1][2], p[1][1][0]],
@@ -1009,7 +989,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Ix_prime: function (p) {
+    I_x_prime: function (p) {
       return [
         [
           p[0][0],
@@ -1033,7 +1013,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Iy_prime: function (p) {
+    I_y_prime: function (p) {
       return [
         [
           p[0][0],
@@ -1057,7 +1037,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Iz_prime: function (p) {
+    I_z_prime: function (p) {
       return [
         [
           p[0][0],
@@ -1081,7 +1061,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Ox_prime: function (p) {
+    O_x_prime: function (p) {
       return [
         [
           [p[0][4][0], p[0][4][2], p[0][4][1], p[0][4][3]],
@@ -1105,7 +1085,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Oy_prime: function (p) {
+    O_y_prime: function (p) {
       return [
         [
           [p[1][1][2], p[1][1][1], p[1][1][0], p[1][1][3]],
@@ -1129,7 +1109,7 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Oz_prime: function (p) {
+    O_z_prime: function (p) {
       return [
         [
           [p[1][1][1], p[1][1][0], p[1][1][2], p[1][1][3]],
@@ -1297,54 +1277,6 @@ export const melindas_physical_2x2x2x2 = {
         ],
       ];
     },
-    Uy2: function (p) {
-      return [
-        [
-          p[1][2],
-          p[1][3],
-          p[1][0],
-          p[1][1],
-          p[0][4],
-          p[0][5],
-          p[0][6],
-          p[0][7],
-        ],
-        [
-          p[0][2],
-          p[0][3],
-          p[0][0],
-          p[0][1],
-          p[1][4],
-          p[1][5],
-          p[1][6],
-          p[1][7],
-        ],
-      ];
-    },
-    Dy2: function (p) {
-      return [
-        [
-          p[0][0],
-          p[0][1],
-          p[0][2],
-          p[0][3],
-          p[1][6],
-          p[1][7],
-          p[1][4],
-          p[1][5],
-        ],
-        [
-          p[1][0],
-          p[1][1],
-          p[1][2],
-          p[1][3],
-          p[0][6],
-          p[0][7],
-          p[0][4],
-          p[0][5],
-        ],
-      ];
-    },
     LRx: function (c) {
       return [
         [c[3][0], c[3][2], c[3][1], c[3][3]],
@@ -1406,71 +1338,30 @@ export const melindas_physical_2x2x2x2 = {
       ];
     },
   },
-  updateCube: function (e) {
-    const m = this.move;
-    switch (e.code) {
-      case this.keys[0]:
-        this.puzzleState = m.Lx(this.puzzleState);
-        break;
-      case this.keys[1]:
-        this.puzzleState = m.Lx_prime(this.puzzleState);
-        break;
-      case this.keys[2]:
-        this.puzzleState = m.Ly(this.puzzleState);
-        break;
-      case this.keys[3]:
-        this.puzzleState = m.Ly_prime(this.puzzleState);
-        break;
-      case this.keys[4]:
-        this.puzzleState = m.Lz(this.puzzleState);
-        break;
-      case this.keys[5]:
-        this.puzzleState = m.Lz_prime(this.puzzleState);
-        break;
-      case this.keys[6]:
-        this.puzzleState = m.Rx(this.puzzleState);
-        break;
-      case this.keys[7]:
-        this.puzzleState = m.Rx_prime(this.puzzleState);
-        break;
-      case this.keys[8]:
-        this.puzzleState = m.Ry(this.puzzleState);
-        break;
-      case this.keys[9]:
-        this.puzzleState = m.Ry_prime(this.puzzleState);
-        break;
-      case this.keys[10]:
-        this.puzzleState = m.Rz(this.puzzleState);
-        break;
-      case this.keys[11]:
-        this.puzzleState = m.Rz_prime(this.puzzleState);
-        break;
-      case this.keys[12]:
-        this.puzzleState = m.Uy2(this.puzzleState);
-        break;
-      case this.keys[13]:
-        this.puzzleState = m.Dy2(this.puzzleState);
-        break;
-      case this.keys[14]:
-        this.puzzleState = m.Ix(this.puzzleState);
-        break;
-      case this.keys[15]:
-        this.puzzleState = m.Ix(this.puzzleState);
-        break;
-      case this.keys[16]:
-        this.puzzleState = m.Ix_prime(this.puzzleState);
-        break;
-      case this.keys[17]:
-        this.puzzleState = m.Ix_prime(this.puzzleState);
-        break;
-      case this.keys[18]:
-        this.puzzleState = m.gyro_z(this.puzzleState);
-        break;
-      case this.keys[19]:
-        this.puzzleState = m.gyro_z_prime(this.puzzleState);
-        break;
+  handleKeydown: function (e) {
+    for (let i = 0; i < this.cellgripkeys.length; i++) {
+      if (e.code === this.cellgripkeys[i][0]) {
+        this.cellgripkeys[i][0] = true;
+      }
+      for (let j = 0; j < this.movekeys.length; j++) {
+        if (
+          this.cellgripkeys[i][1 === true] &&
+          e.code === this.movekeys[j][0]
+        ) {
+          this.puzzleState = this.move[
+            `${this.cellgripkeys[i][2]}${this.movekeys[j][1]}`
+          ](this.puzzleState);
+        }
+      }
     }
     this.permuteCube(this.puzzleState);
+  },
+  handleKeyup: function (e) {
+    for (let i = 0; i < this.cellgripkeys.length; i++) {
+      if (e.code === this.cellgripkeys[i][0]) {
+        this.cellgripkeys[i][0] = false;
+      }
+    }
   },
   permuteCube: function (p) {
     let orderedtris = [
@@ -1607,6 +1498,9 @@ export const melindas_physical_2x2x2x2 = {
       ],
     ];
     this.permuteCube(this.puzzleState);
+    for (let i = 0; i < this.cellgripkeys.length; i++) {
+      this.cellgripkeys[1] = false;
+    }
   },
   resetHighlights: function () {
     for (let i = 0; i < 96; i++) {
@@ -1697,7 +1591,7 @@ export const melindas_physical_2x2x2x2 = {
       return p;
     }
   },
-  randomize: function (puzzleState) {
+  randomize: function () {
     /* Generates a random scramble sequence and draws the resulting 4D Rubik's cube, based on the scrambling algorithm from https://2x2x2x2scrambler.github.io/ */
     const physmoves = [
       'y',
@@ -1749,4 +1643,3 @@ export const melindas_physical_2x2x2x2 = {
     this.permuteCube(this.puzzleState);
   },
 };
-
