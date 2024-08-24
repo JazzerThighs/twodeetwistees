@@ -69,15 +69,15 @@ export const melindas_physical_2x2x2x2_noncanonical = {
   ],
   cellgripkeys: [
     // HyperSpeedCube 2^4 Cell Grip Bindings (Non-canonical Moves for Melinda's Physical 2^4 Hypercube):
-    ['KeyW', false, 'L_'], // Grip L Cell
-    ['KeyE', false, 'U_'], // Grip U Cell
-    ['KeyR', false, 'B_'], // Grip B Cell
-    ['KeyS', false, 'F_'], // Grip F Cell
-    ['KeyD', false, 'I_'], // Grip I Cell
-    ['KeyF', false, 'R_'], // Grip R Cell
-    ['KeyC', false, 'D_'], // Grip D Cell
-    ['KeyV', false, 'O_'], // Grip O Cell
-    ['KeyX', false, 'gyro_'], // Grip Gyro (4D Rotate)
+    ['KeyW', 'L_',    false], // Grip L Cell
+    ['KeyE', 'U_',    false], // Grip U Cell
+    ['KeyR', 'B_',    false], // Grip B Cell
+    ['KeyS', 'F_',    false], // Grip F Cell
+    ['KeyD', 'I_',    false], // Grip I Cell
+    ['KeyF', 'R_',    false], // Grip R Cell
+    ['KeyC', 'D_',    false], // Grip D Cell
+    ['KeyV', 'O_',    false], // Grip O Cell
+    ['KeyX', 'gyro_', false], // Grip Gyro (4D Rotate)
   ],
   movekeys: [
     // HyperSpeedCube 2^4 Cell 3D Rotation Bindings (Non-canonical Moves for Melinda's Physical 2^4 Hypercube):
@@ -1341,15 +1341,15 @@ export const melindas_physical_2x2x2x2_noncanonical = {
   handleKeydown: function (e) {
     for (let i = 0; i < this.cellgripkeys.length; i++) {
       if (e.code === this.cellgripkeys[i][0]) {
-        this.cellgripkeys[i][0] = true;
+        this.cellgripkeys[i][2] = true;
       }
       for (let j = 0; j < this.movekeys.length; j++) {
         if (
-          this.cellgripkeys[i][1 === true] &&
+          this.cellgripkeys[i][2] &&
           e.code === this.movekeys[j][0]
         ) {
           this.puzzleState = this.move[
-            `${this.cellgripkeys[i][2]}${this.movekeys[j][1]}`
+            `${this.cellgripkeys[i][1]}${this.movekeys[j][1]}`
           ](this.puzzleState);
         }
       }
@@ -1359,7 +1359,7 @@ export const melindas_physical_2x2x2x2_noncanonical = {
   handleKeyup: function (e) {
     for (let i = 0; i < this.cellgripkeys.length; i++) {
       if (e.code === this.cellgripkeys[i][0]) {
-        this.cellgripkeys[i][0] = false;
+        this.cellgripkeys[i][2] = false;
       }
     }
   },
@@ -1498,8 +1498,8 @@ export const melindas_physical_2x2x2x2_noncanonical = {
       ],
     ];
     this.permuteCube(this.puzzleState);
-    for (let i = 0; i < this.cellgripkeys.length; i++) {
-      this.cellgripkeys[1] = false;
+    for (let j = 0; j < this.cellgripkeys.length; j++) {
+      this.cellgripkeys[j][2] = false;
     }
   },
   resetHighlights: function () {
@@ -1539,7 +1539,7 @@ export const melindas_physical_2x2x2x2_noncanonical = {
       }
     }
   },
-  LorRturn: function (p, num) {
+  LorRTurn: function (p, num) {
     const m = this.move;
     if (num == 0) {
       return m.LRy(p);
@@ -1624,9 +1624,9 @@ export const melindas_physical_2x2x2x2_noncanonical = {
     let scrambleLen = scrambleLength[Math.floor(Math.random() * 3)];
     for (let i = 0; i < scrambleLen; i++) {
       let Lrand = Math.floor(Math.random() * 24);
-      this.puzzleState[0] = this.LorRturn(this.puzzleState[0], Lrand);
+      this.puzzleState[0] = this.LorRTurn(this.puzzleState[0], Lrand);
       let Rrand = Math.floor(Math.random() * 24);
-      this.puzzleState[1] = this.LorRturn(this.puzzleState[1], Rrand);
+      this.puzzleState[1] = this.LorRTurn(this.puzzleState[1], Rrand);
       this.puzzleState = this.move.hashtag(this.puzzleState);
       let Lrandstr = '';
       let Rrandstr = '';

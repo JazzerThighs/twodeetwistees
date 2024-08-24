@@ -4,13 +4,13 @@ import { rubiks_junior_2x2x2 } from "./puzzles/puz_2x2x2.js";
 import { rubiks_cube_3x3x3 } from "./puzzles/puz_3x3x3.js";
 import { melindas_physical_2x2x2x2_canonical } from "./puzzles/puz_melindas_physical_2x2x2x2_canonical.js";
 import { melindas_physical_2x2x2x2_noncanonical } from "./puzzles/puz_melindas_physical_2x2x2x2_noncanonical.js";
-
 const puzzles = {
   rubiks_junior_2x2x2: rubiks_junior_2x2x2,
   rubiks_cube_3x3x3: rubiks_cube_3x3x3,
   melindas_physical_2x2x2x2_canonical: melindas_physical_2x2x2x2_canonical,
   melindas_physical_2x2x2x2_noncanonical: melindas_physical_2x2x2x2_noncanonical,
 };
+
 const titlecontainer = document.getElementById("titlecontainer");
 const subtitlecontainer = document.getElementById("subtitlecontainer");
 const puzzleSelector = document.getElementById("puzzleselector");
@@ -18,7 +18,6 @@ const versionSelector = document.getElementById("versionselector");
 const scramblenotation = document.getElementById("scramblenotation");
 const puzzlecontainer = document.getElementById("puzzlecontainer");
 const controlscontainer = document.getElementById("controlscontainer");
-
 
 function updatePuzzleSelection() {
   versionSelector.innerHTML = '';
@@ -113,7 +112,7 @@ function handleKeydown(event) {
   if (event.repeat === true) { return; }
   resetHighlights();
   const perm = puzzles[puzzleSelector.value].getPermutation();
-  if (ready == false) {
+  if (ready === false) {
     puzzles[puzzleSelector.value].handleKeydown(event);
   } else if (isStopwatchRunning) {
     puzzles[puzzleSelector.value].handleKeydown(event);
@@ -127,7 +126,7 @@ function handleKeydown(event) {
   puzzles[puzzleSelector.value].updateHighlights(perm);
 }
 function handleKeyup(event) {
-  puzzles[puzzleSelector.value].handleKeyup();
+  puzzles[puzzleSelector.value].handleKeyup(event);
 }
 function scramble() {
   reset();

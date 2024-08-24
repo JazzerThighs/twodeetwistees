@@ -1629,7 +1629,7 @@ export const melindas_physical_2x2x2x2_canonical = {
       }
     }
   },
-  LorRturn: function (p, num) {
+  LorRTurn: function (p, num) {
     const m = this.move;
     if (num == 0) {
       return m.LRy(p);
@@ -1681,7 +1681,7 @@ export const melindas_physical_2x2x2x2_canonical = {
       return p;
     }
   },
-  randomize: function (puzzleState) {
+  randomize: function () {
     /* Generates a random scramble sequence and draws the resulting 4D Rubik's cube, based on the scrambling algorithm from https://2x2x2x2scrambler.github.io/ */
     const physmoves = [
       'y',
@@ -1714,9 +1714,9 @@ export const melindas_physical_2x2x2x2_canonical = {
     let scrambleLen = scrambleLength[Math.floor(Math.random() * 3)];
     for (let i = 0; i < scrambleLen; i++) {
       let Lrand = Math.floor(Math.random() * 24);
-      this.puzzleState[0] = this.LorRturn(this.puzzleState[0], Lrand);
+      this.puzzleState[0] = this.LorRTurn(this.puzzleState[0], Lrand);
       let Rrand = Math.floor(Math.random() * 24);
-      this.puzzleState[1] = this.LorRturn(this.puzzleState[1], Rrand);
+      this.puzzleState[1] = this.LorRTurn(this.puzzleState[1], Rrand);
       this.puzzleState = this.move.hashtag(this.puzzleState);
       let Lrandstr = '';
       let Rrandstr = '';
