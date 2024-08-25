@@ -17,7 +17,6 @@ const puzzleSelector = document.getElementById("puzzleselector");
 const versionSelector = document.getElementById("versionselector");
 const scramblenotation = document.getElementById("scramblenotation");
 const puzzlecontainer = document.getElementById("puzzlecontainer");
-const controlscontainer = document.getElementById("controlscontainer");
 
 function updatePuzzleSelection() {
   versionSelector.innerHTML = '';
@@ -34,7 +33,6 @@ function updateVersionSelection() {
   titlecontainer.innerHTML = puzzles[puzzleSelector.value].titletext;
   subtitlecontainer.innerHTML = puzzles[puzzleSelector.value].subtitletext;
   puzzlecontainer.innerHTML = puzzles[puzzleSelector.value].svgversions[versionSelector.value];
-  controlscontainer.innerHTML = puzzles[puzzleSelector.value].controlstext;
   reset();
 }
 
@@ -42,7 +40,7 @@ let stopwatchInterval;
 let startTime;
 let ready = false;
 let isStopwatchRunning = false;
-let successfulSolve = false;
+let successfulSolve = true;
 let attributeForCheckingColor = "fill";
 
 function startStopwatch() {
@@ -85,28 +83,45 @@ function reset() {
   ready = false;
   stopAndResetStopwatch();
   puzzles[puzzleSelector.value].reset();
+  const clone = document.getElementById("controlbuttons").cloneNode(true);
+  document.getElementById("controlbuttons").parentNode.replaceChild(clone, document.getElementById('controlbuttons'));
+  document.getElementById("controlbuttons").innerHTML = '';
+  document.getElementById("controlscontainer").innerHTML = '';
+  if (puzzles[puzzleSelector.value].addControls !== undefined) {
+    puzzles[puzzleSelector.value].addControls();
+  }
+  if (puzzles[puzzleSelector.value].controlstext !== "") {
+    document.getElementById("controlscontainer").innerHTML = puzzles[puzzleSelector.value].controlstext;
+  }
   resetHighlights();
 }
 
 function checkSolved() {
   let stopwatchstring = generateStopwatchString();
-  let input = puzzles[puzzleSelector.value].linkedtris;
-  for (let i = 0; i < input.length; i++) {
-    for (let j = 1; j < input[i].length; j++) {
-      if (
-        document.getElementById(input[i][j]).getAttribute(attributeForCheckingColor) !==
-        document.getElementById(input[i][j - 1]).getAttribute(attributeForCheckingColor)
-      ) {
-        return;
+  let solved = true;
+  if (puzzles[puzzleSelector.value].checkSolved === undefined) {
+    let input = puzzles[puzzleSelector.value].linkedtris;
+    for (let i = 0; i < input.length; i++) {
+      for (let j = 1; j < input[i].length; j++) {
+        if (
+          document.getElementById(input[i][j]).getAttribute(attributeForCheckingColor) !==
+          document.getElementById(input[i][j - 1]).getAttribute(attributeForCheckingColor)
+        ) {
+          return;
+        }
       }
     }
+  } else {
+    solved = puzzles[puzzleSelector.value].checkSolved();
   }
-  document.getElementById(
-    "solvetime"
-  ).textContent = `Solved in ${stopwatchstring}`;
-  stopAndResetStopwatch();
-  ready = false;
-  successfulSolve = true;
+  if (solved === true) {
+    document.getElementById(
+      "solvetime"
+    ).textContent = `Solved in ${stopwatchstring}`;
+    stopAndResetStopwatch();
+    ready = false;
+    successfulSolve = true;
+  }
 }
 function handleKeydown(event) {
   if (event.repeat === true) { return; }
