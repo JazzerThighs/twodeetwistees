@@ -1,5 +1,5 @@
-import { phys2x2x2x2v1 } from "./puzzlesvgs/phys2x2x2x2v1";
-import { phys2x2x2x2v2 } from "./puzzlesvgs/phys2x2x2x2v2";
+import { phys2x2x2x2v1 } from "./puzzlesvgs/phys2x2x2x2v1.js";
+import { phys2x2x2x2v2 } from "./puzzlesvgs/phys2x2x2x2v2.js";
 
 export const melindas_physical_2x2x2x2_canonical = {
   titletext: "Melinda's 2×2×2×2 Physical Hypercube 2D Projection (Canonical Moveset)",

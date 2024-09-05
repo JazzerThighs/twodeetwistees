@@ -89,6 +89,7 @@ function reset() {
   document.getElementById("controlscontainer").innerHTML = '';
   if (puzzles[puzzleSelector.value].addControls !== undefined) {
     puzzles[puzzleSelector.value].addControls();
+    console.log("controls added...")
   }
   if (puzzles[puzzleSelector.value].controlstext !== "") {
     document.getElementById("controlscontainer").innerHTML = puzzles[puzzleSelector.value].controlstext;
