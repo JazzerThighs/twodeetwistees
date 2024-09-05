@@ -1396,23 +1396,23 @@ export const melindas_physical_2x2x2x2_noncanonical = {
     ]
   ],
   cubies: [
-    ["tri8",  "tri1",  "tri5",  "tri12", "tri34", "tri39"],
-    ["tri9",  "tri13", "tri38", "tri44", "tri35", "tri40"],
-    ["tri10", "tri3",  "tri15", "tri6",  "tri20", "tri16"],
-    ["tri11", "tri14", "tri47", "tri21", "tri17", "tri42"],
-    ["tri24", "tri28", "tri45", "tri37", "tri33", "tri41"],
-    ["tri25", "tri0",  "tri29", "tri36", "tri4",  "tri32"],
-    ["tri26", "tri19", "tri31", "tri46", "tri22", "tri43"],
-    ["tri27", "tri2",  "tri18", "tri30", "tri7",  "tri23"],
+    [8,  1,  5,  12, 34, 39],
+    [9,  13, 38, 44, 35, 40],
+    [10, 3,  15, 6,  20, 16],
+    [11, 14, 47, 21, 17, 42],
+    [24, 28, 45, 37, 33, 41],
+    [25, 0,  29, 36, 4,  32],
+    [26, 19, 31, 46, 22, 43],
+    [27, 2,  18, 30, 7,  23],
 
-    ["tri56", "tri60", "tri85", "tri95", "tri81", "tri90"],
-    ["tri57", "tri61", "tri76", "tri94", "tri72", "tri91"],
-    ["tri58", "tri63", "tri68", "tri86", "tri64", "tri83"],
-    ["tri59", "tri62", "tri69", "tri79", "tri65", "tri74"],
-    ["tri48", "tri52", "tri93", "tri77", "tri73", "tri89"],
-    ["tri49", "tri53", "tri84", "tri92", "tri80", "tri88"],
-    ["tri50", "tri55", "tri78", "tri70", "tri67", "tri75"],
-    ["tri51", "tri54", "tri87", "tri71", "tri66", "tri82"],
+    [56, 60, 85, 95, 81, 90],
+    [57, 61, 76, 94, 72, 91],
+    [58, 63, 68, 86, 64, 83],
+    [59, 62, 69, 79, 65, 74],
+    [48, 52, 93, 77, 73, 89],
+    [49, 53, 84, 92, 80, 88],
+    [50, 55, 78, 70, 67, 75],
+    [51, 54, 87, 71, 66, 82],
   ],
   colors: [
     'orange',
@@ -1601,7 +1601,7 @@ export const melindas_physical_2x2x2x2_noncanonical = {
           <div style="padding: 10px; font-family: Arial, sans-serif; font-size: 14px;">
               <h2 style="margin-bottom: 10px;">Keyboard Controls</h2>
               <div style="margin-bottom: 20px;">
-                  <h3 style="margin-bottom: 5px;">Cell Grips</h3>
+                  <h3 style="margin-bottom: 5px;">Cell Grips: Hold one of these keys down to grip a particular cell, or projection rotation axis.</h3>
                   <ul style="list-style-type: none; padding: 0;">
       `;
     cellgripkeys.forEach((key) => {
@@ -1618,7 +1618,7 @@ export const melindas_physical_2x2x2x2_noncanonical = {
                   </ul>
               </div>
               <div>
-                  <h3 style="margin-bottom: 5px;">Rotations</h3>
+                  <h3 style="margin-bottom: 5px;">Rotations: Press one while holding down one of the Grip keys to perform a move.</h3>
                   <ul style="list-style-type: none; padding: 0;">
       `;
     movekeys.forEach((key) => {
@@ -1858,14 +1858,15 @@ export const melindas_physical_2x2x2x2_noncanonical = {
       const cubie = this.cubies[i];
       let changed = false;
       for (let j = 0; j < cubie.length; j++) {
-        if (oldPerm[cubie[j]] !== newPerm[cubie[j]]) {
+        if (newPerm[cubie[j]] && oldPerm[cubie[j]] !== newPerm[cubie[j]]) {
           changed = true;
           break;
         }
       }
       if (changed) {
+        console.log("Change!");
         for (let k = 0; k < cubie.length; k++) {
-          let tri = document.getElementById(cubie[k]);
+          let tri = document.getElementById(`tri${cubie[k]}`);
           if (tri) {
             tri.setAttribute('stroke-width', '1.75');
             let parent = tri.parentNode;

@@ -1,4 +1,4 @@
-export const phys2x2x2x2v1 = `<svg id="cube" viewbox="-5 -5 375 135" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" style="display: block; max-width: 100%; height: auto; padding: 0.5rem">
+export const phys2x2x2x2v1 = `<svg id="cube" viewbox="-5 -5 375 135" width="100%" preserveAspectRatio="xMidYMid meet" style="display: block; max-width: 100%; padding: 0.5rem">
   <polygon id="tri1" points="25.000,50.000 50.000,50.000 25.000,25.000" />
   <polygon id="tri2" points="25.000,50.000 0.000,50.000 25.000,75.000" />
   <polygon id="tri3" points="25.000,50.000 50.000,50.000 25.000,75.000" />

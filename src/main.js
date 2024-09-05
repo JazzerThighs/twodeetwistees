@@ -89,7 +89,6 @@ function reset() {
   document.getElementById("controlscontainer").innerHTML = '';
   if (puzzles[puzzleSelector.value].addControls !== undefined) {
     puzzles[puzzleSelector.value].addControls();
-    console.log("controls added...")
   }
   if (puzzles[puzzleSelector.value].controlstext !== "") {
     document.getElementById("controlscontainer").innerHTML = puzzles[puzzleSelector.value].controlstext;
@@ -127,7 +126,7 @@ function checkSolved() {
 function handleKeydown(event) {
   if (event.repeat === true) { return; }
   resetHighlights();
-  const perm = puzzles[puzzleSelector.value].getPermutation();
+  let perm = puzzles[puzzleSelector.value].getPermutation();
   if (ready === false) {
     puzzles[puzzleSelector.value].handleKeydown(event);
   } else if (isStopwatchRunning) {

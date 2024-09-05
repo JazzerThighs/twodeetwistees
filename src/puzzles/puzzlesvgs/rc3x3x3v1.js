@@ -1,4 +1,4 @@
-export const rc3x3x3v1 = `<svg class="cube" viewbox="0 0 1650 1000" width="100%" height="auto" preserveAspectRatio="xMidYMid meet" style="display: block; max-width: 100%; height: auto; padding: 1rem">
+export const rc3x3x3v1 = `<svg class="cube" viewbox="0 0 1650 1000" width="100%" preserveAspectRatio="xMidYMid meet" style="display: block; max-width: 100%; padding: 1rem">
 <polygon id="yC" points="410,990 590,990 590,810 410,810" />
 <polygon id="RQ4F" points="1510.000,610.000 1410.000,610.000 1410.000,710.000 1488.900,688.900" />
 <polygon id="RQ4U" points="1410.000,710.000 1460.000,796.600 1546.600,746.600 1488.900,688.900" />
